@@ -7,8 +7,8 @@ const root = document.getElementById("root") as HTMLDivElement;
 
 const theme = extendTheme({
   fonts: {
-    body: "Inter, sans-serif",
-    heading: "Inter, sans-serif",
+    body: "Roboto, Helvetica, Arial, sans-serif",
+    heading: "Roboto, Helvetica, Arial, sans-serif"
   },
   colors:{
     brand:{

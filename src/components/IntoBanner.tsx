@@ -30,8 +30,8 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
       justifyContent='flex-start'
       bg='brand.300'>
         <VStack w='80%' alignItems={'flex-start'}>
-        <Heading  fontSize='6xl' >Caroline Deboos-Roulez</Heading>
-        <Text fontSize='3xl'>Executive Pastry Chef Consultant</Text>
+        <Heading  fontSize='6xl' >SeaElle Pastry Consultancy</Heading>
+        <Text fontSize='3xl'>Caroline Lerus-Roulez Executive pastry chef and    consultant</Text>
         <HStack>
             <Button color='white'size={'lg'} bg={'brand.100'} onClick={()=>handleClick('about')}>About</Button>
             <Button color='white' size={'lg'} bg={'brand.200'} onClick={()=>handleClick('contact')}>Contact</Button>

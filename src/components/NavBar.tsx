@@ -1,21 +1,20 @@
-import { HStack, Link } from '@chakra-ui/react'
+import { HStack } from '@chakra-ui/react'
 import { FC } from 'react'
+import { NavLink } from './NavLink'
 
-interface NavBarProps {
-
-}
+interface NavBarProps {}
 
 export const NavBar: FC<NavBarProps> = () => {
-  return (
-    <HStack justifyContent='space-between' w='100%'  bg="brand.100">
-     <div>Logo</div>
-     <HStack  w= '50%' justifyContent='space-evenly'>
-     <Link href='#services'>Services</Link>
-      <Link href='#about'>About Me</Link>
-      <Link href='#portfolio'>Gallery/Portoflio</Link>
-      <Link href='#testimonials'>Testimonials</Link>
-      <Link href='#contact-me'>Contact Me</Link>
-     </HStack>
-    </HStack>
-  )
+    return (
+        <HStack justifyContent="space-between" w="100%" h="6%" bg="brand.100" position="fixed">
+            <div>Logo</div>
+            <HStack w="50%" justifyContent="space-evenly">
+                <NavLink path="services" text="Services" />
+                <NavLink path="about" text="About Me" />
+                <NavLink path="portfolio" text="Gallery/Portoflio" />
+                <NavLink path="testimonials" text="Testimonials" />
+                <NavLink path="contact-me" text="Contact Me" />
+            </HStack>
+        </HStack>
+    )
 }
