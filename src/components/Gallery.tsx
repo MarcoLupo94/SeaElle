@@ -24,7 +24,6 @@ export function Gallery() {
                 showThumbs={true} // Hide thumbnail navigatio
                 interval={3000} // Change slide every 3 seconds
                 showStatus={false} // Hide slide status indicator
-                infiniteLoop
                 renderArrowNext={clickHandler => (
                     <IconButton
                         icon={<ArrowRightIcon />}
