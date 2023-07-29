@@ -7,20 +7,23 @@ interface ServiceCardProps {
     icon: IconType
     title: string
     content: string
+    color: string
 }
 
-export const ServiceCard: FC<ServiceCardProps> = ({ title, content, icon }) => {
+export const ServiceCard: FC<ServiceCardProps> = ({ title, content, icon, color }) => {
     return (
-        <Card w="40%" bg="brand.400">
+        <Card width="400px" height="300px">
             <CardHeader color="white">
-                <Heading fontSize="2xl">
+                <Icon as={icon} mr="6" fontSize={'4xl'} color={color} />
+                <Heading fontSize="xl" color="black">
                     {' '}
-                    <Icon as={icon} mr="6" />
                     {title}
                 </Heading>
             </CardHeader>
             <CardBody>
-                <Text color="brand.300">{content}</Text>
+                <Text color="gray.700" fontSize="lg">
+                    {content}
+                </Text>
             </CardBody>
         </Card>
     )
