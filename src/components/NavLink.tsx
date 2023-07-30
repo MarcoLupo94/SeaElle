@@ -14,7 +14,7 @@ export const NavLink: FC<NavLinkProps> = props => {
     const handleClick = (path: string) => {
         const targetSection = document.getElementById(path)
         if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' })
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'end' })
         }
     }
 

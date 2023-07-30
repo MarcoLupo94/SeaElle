@@ -139,7 +139,7 @@ const NavLink: FC<NavLinkProps> = ({ path, text, onClick }) => {
         const targetSection = document.getElementById(path)
 
         if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' })
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'end' })
         }
 
         if (onClick) {
