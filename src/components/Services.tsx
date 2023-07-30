@@ -1,4 +1,4 @@
-import { HStack, Heading, VStack } from '@chakra-ui/react'
+import { Flex, HStack, Heading, VStack, useBreakpointValue } from '@chakra-ui/react'
 import { FC } from 'react'
 import { ServiceCard } from './ServiceCard'
 import { GiWhisk, GiChefToque } from 'react-icons/gi'
@@ -39,17 +39,22 @@ const services: Service[] = [
 ]
 
 export const Services: FC<ServicesProps> = () => {
+    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
+
     return (
         <VStack
             id="services"
-            style={{ height: '80vh' }}
-            maxWidth="1200px"
-            m="10"
+            height={{ base: 'auto', md: '80vh' }} // Adjust the height based on the screen size
+            maxWidth={isMobile ? '80%' : '1200px'}
+            mx="auto"
             justifyContent="space-evenly"
-            align="start" // Align the header to the left
         >
-            <Heading marginBottom="10">Services</Heading>
-            <HStack gap="10" justifyContent="space-evenly" marginBottom="10">
+            <Flex
+                direction={isMobile ? 'column' : 'row'} // Adjust the direction based on the screen size
+                gap={isMobile ? '6' : '10'} // Adjust the gap between cards based on the screen size
+                justifyContent={isMobile ? 'center' : 'space-evenly'}
+                marginBottom="10"
+            >
                 {services.map((service, i) => (
                     <ServiceCard
                         color={service.color}
@@ -59,10 +64,10 @@ export const Services: FC<ServicesProps> = () => {
                         content={service.content}
                     />
                 ))}
-            </HStack>
-            <HStack justifyContent="center" w="100%">
+            </Flex>
+            <HStack justifyContent="center" width="100%">
                 <NavLink path="contact-me" text="Get in touch" color="brand.200" size="lg" />
-            </HStack>{' '}
+            </HStack>
         </VStack>
     )
 }

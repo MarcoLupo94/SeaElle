@@ -14,6 +14,7 @@ const App = () => {
         <VStack sx={{ width: '100%', height: '100%' }} bg="brand.300">
             <NavBar />
             <IntoBanner />
+            <DividerStyled text="SERVICES" />
             <Services />
             <DividerStyled text="MY WORK" />
             <Gallery />

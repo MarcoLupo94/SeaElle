@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import {
     Box,
     Flex,
@@ -9,6 +9,7 @@ import {
     Button,
     useToast
 } from '@chakra-ui/react'
+import emailjs from '@emailjs/browser'
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -18,25 +19,52 @@ function ContactForm() {
         phone: '',
         subject: ''
     })
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const formRef = useRef('')
 
     const toast = useToast()
 
     const handleInputChange = (e: { target: { name: string; value: string } }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
+    const sendEmail = () => {
+        emailjs
+            .sendForm(
+                import.meta.env.VITE_EMAIL_ID,
+                import.meta.env.VITE_EMAIL_TEMPLATE,
+                formRef.current,
+                import.meta.env.VITE_EMAILJS_KEY
+            )
+            .then(
+                () => {
+                    // Display a success toast message after form submission
+                    toast({
+                        title: 'Message Sent',
+                        description: 'Your message has been sent successfully!',
+                        status: 'success',
+                        duration: 5000,
+                        isClosable: true
+                    })
+                },
+                () => {
+                    // Display a success toast message after form submission
+                    toast({
+                        title: 'Error Sending Message',
+                        description:
+                            'We were not able to send your message. Please try again later.',
+                        status: 'error',
+                        duration: 5000,
+                        isClosable: true
+                    })
+                }
+            )
+    }
 
     const handleSubmit = (e: { preventDefault: () => void }) => {
         e.preventDefault()
         // Here, you can add your logic for form submission, like sending an email or making an API call.
-
-        // Display a success toast message after form submission
-        toast({
-            title: 'Message Sent',
-            description: 'Your message has been sent successfully!',
-            status: 'success',
-            duration: 5000,
-            isClosable: true
-        })
+        sendEmail()
 
         // Clear the form fields after submission
         setFormData({
@@ -49,7 +77,7 @@ function ContactForm() {
     }
     return (
         <Box p={4} bg="white" borderRadius="lg" boxShadow="md" color="black">
-            <form onSubmit={handleSubmit}>
+            <form ref={formRef} onSubmit={handleSubmit}>
                 <FormControl isRequired mb={4}>
                     <FormLabel>Name</FormLabel>
                     <Input
@@ -100,7 +128,7 @@ function ContactForm() {
                     />
                 </FormControl>
                 <Flex justifyContent="center">
-                    <Button type="submit" bg="brand.200" size="sm">
+                    <Button type="submit" bg="brand.200" size="sm" color="white">
                         Send Message
                     </Button>
                 </Flex>

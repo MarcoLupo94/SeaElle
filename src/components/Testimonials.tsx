@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Text, Avatar } from '@chakra-ui/react'
+import { Box, SimpleGrid, Text, Avatar, useBreakpointValue } from '@chakra-ui/react'
 import { FC } from 'react'
 
 // Sample testimonial data
@@ -61,9 +61,11 @@ const CardComponent: FC<CardComponentProps> = ({ name, quote, avatarUrl }) => {
 }
 
 function TestimonialsSection() {
+    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
+
     return (
         <Box id="testimonials" py={12} bg="transparent" minHeight="60vh">
-            <Box maxWidth="1200px" mx="auto">
+            <Box maxWidth={isMobile ? '80%' : '1200px'} mx="auto">
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
                     {testimonialsData.map(testimonial => (
                         <CardComponent

@@ -1,10 +1,11 @@
-import { Box, Divider } from '@chakra-ui/react'
+import { Box, Divider, useBreakpointValue } from '@chakra-ui/react'
 import { FC } from 'react'
 interface DividerStyledProps {
     text?: string
 }
 
 const DividerStyled: FC<DividerStyledProps> = props => {
+    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
     return (
         <Box width="100%" py={6} position="relative">
             <Divider borderColor="gray.300" />
@@ -16,8 +17,8 @@ const DividerStyled: FC<DividerStyledProps> = props => {
                 left="50%"
                 transform="translate(-50%, -50%)"
                 bg="brand.400"
-                px={20} // Increase the horizontal padding for a larger text container
-                style={{ fontSize: '1.5rem' }}
+                px={isMobile ? 10 : 20} // Increase the horizontal padding for a larger text container
+                style={isMobile ? { fontSize: '1rem' } : { fontSize: '1.5rem' }}
                 fontWeight="bold"
                 color="white"
                 borderRadius="md" // Adjust the border radius to match the Divider's rounded corners
