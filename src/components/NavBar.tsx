@@ -1,24 +1,22 @@
-import { useState, useEffect, useRef } from 'react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import {
     Box,
-    Flex,
-    Text,
     Link as ChakraLink,
-    IconButton,
     Drawer,
-    DrawerOverlay,
-    DrawerContent,
+    DrawerBody,
     DrawerCloseButton,
+    DrawerContent,
     DrawerHeader,
-    DrawerBody
+    DrawerOverlay,
+    Flex,
+    IconButton,
+    Text
 } from '@chakra-ui/react'
-import { FC } from 'react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { FC, useEffect, useState } from 'react'
 
 interface NavBarProps {}
 
 export const NavBar: FC<NavBarProps> = () => {
-    const navLinksRef = useRef([])
     const [isMenuOpen, setMenuOpen] = useState(false)
     const [isScrolled, setScrolled] = useState(false)
 
@@ -66,7 +64,6 @@ export const NavBar: FC<NavBarProps> = () => {
             <Flex
                 display={{ base: 'none', md: 'flex' }} // Hide on mobile, show on medium and larger screens
                 align="center"
-                ref={navLinksRef}
             >
                 <NavLink path="services" text="Services" />
                 <NavLink path="about" text="About Me" />
@@ -78,7 +75,6 @@ export const NavBar: FC<NavBarProps> = () => {
             <Flex
                 display={{ base: 'none', md: 'flex' }} // Hide on mobile, show on medium and larger screens
                 align="center"
-                ref={navLinksRef}
             >
                 <NavLink path="services" text="Baking School" />
                 {/* <NavLink path="about" text="Instagram" /> */}
