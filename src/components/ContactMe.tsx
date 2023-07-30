@@ -3,7 +3,7 @@ import { ContactForm } from './ContactForm'
 
 function ContactMeSection() {
     return (
-        <Box id="contact-me" py={12} bg="brand.300" height="50%" w="80%">
+        <Box id="contact-me" py={12} bg="brand.300" height="50%" w="100%">
             <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
                 <Box flex="1" p={4} maxWidth="1000px">
                     <ContactForm />
