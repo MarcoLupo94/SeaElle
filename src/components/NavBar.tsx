@@ -38,7 +38,6 @@ export const NavBar: FC<NavBarProps> = () => {
 
     return (
         <Flex
-            w="100%"
             as="nav"
             justifyContent="space-between"
             alignItems="center"
@@ -48,6 +47,9 @@ export const NavBar: FC<NavBarProps> = () => {
             color={isScrolled ? 'white' : 'black'} // Change text color when scrolled
             boxShadow={isScrolled ? 'md' : 'none'} // Add shadow effect when scrolled
             position="fixed"
+            top={0}
+            left={0}
+            right={0}
             zIndex="1000"
             style={{
                 transition: 'background-color 0.3s, color 0.3s, box-shadow 0.3s' // Add smooth transitions
@@ -85,14 +87,15 @@ export const NavBar: FC<NavBarProps> = () => {
                     aria-label="Menu"
                     icon={<HamburgerIcon />}
                     onClick={handleMenuToggle}
-                    color={'black'} // Change icon color when scrolled
+                    color={isScrolled ? 'white' : 'black'} // Change icon color when scrolled
                     variant="outline"
                     _hover={{ color: 'brand.500' }}
                 />
                 <Drawer placement="right" onClose={() => setMenuOpen(false)} isOpen={isMenuOpen}>
                     <DrawerOverlay />
-                    <DrawerContent>
+                    <DrawerContent bg={'brand.500'}>
                         <DrawerCloseButton />
+                        <DrawerHeader>Menu</DrawerHeader>
                         <DrawerBody>
                             <Box as="nav">
                                 <NavLink
