@@ -16,7 +16,7 @@ function AboutMeSection() {
                 </Box>
                 <Box flex="1" p={4}>
                     <Image
-                        src="bg.jpg"
+                        src="https://res.cloudinary.com/dytcr3b3j/image/upload/v1690730285/bg.jpg_16-14-20-198_u61pm7.jpg"
                         alt="Profile Picture"
                         boxSize="200px"
                         mx="auto"

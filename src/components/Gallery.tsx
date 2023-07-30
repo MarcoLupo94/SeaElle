@@ -4,15 +4,8 @@ import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const images = [
-    'bg.jpg',
-    'bg.jpg',
-    'bg.jpg',
-    'bg.jpg',
-    'bg.jpg',
-    'bg.jpg',
-    'bg.jpg',
-    'bg.jpg',
-    'bg.jpg'
+    'https://res.cloudinary.com/dytcr3b3j/image/upload/v1690730285/bg.jpg_16-14-20-198_u61pm7.jpg',
+    'https://res.cloudinary.com/dytcr3b3j/image/upload/v1690730285/bg.jpg_16-14-20-198_u61pm7.jpg'
     // Add more image URLs here
 ]
 

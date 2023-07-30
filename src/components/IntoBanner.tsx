@@ -4,7 +4,8 @@ import { Button, HStack, Heading, Text, VStack } from '@chakra-ui/react'
 interface IntoBannerProps {}
 
 const property = {
-    imageUrl: '/bg.jpg'
+    imageUrl:
+        'https://res.cloudinary.com/dytcr3b3j/image/upload/v1690730285/bg.jpg_16-14-20-198_u61pm7.jpg'
 }
 
 export const IntoBanner: FC<IntoBannerProps> = () => {
