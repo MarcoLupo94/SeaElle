@@ -9,6 +9,7 @@ function Footer() {
                         style={{ fontSize: '2rem' }}
                         fontWeight="bold"
                         fontFamily="Dancing Script"
+                        maxW="100px"
                         mx="auto"
                         mb={4}
                     >
