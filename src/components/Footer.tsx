@@ -16,7 +16,7 @@ function Footer() {
                         SeaElle
                     </Text>
                     <Text textAlign="center" fontSize="sm">
-                        © 2023 Your Website. All rights reserved.
+                        © 2023 SeaElle. All rights reserved.
                     </Text>
                 </Box>
                 <Box flex="1">
@@ -31,7 +31,7 @@ function Footer() {
                             Home
                         </Link>
                         <Link
-                            href="#"
+                            href="#about"
                             fontSize="sm"
                             color="whiteAlpha.700"
                             mx={2}
@@ -40,7 +40,7 @@ function Footer() {
                             About
                         </Link>
                         <Link
-                            href="#"
+                            href="#services"
                             fontSize="sm"
                             color="whiteAlpha.700"
                             mx={2}
