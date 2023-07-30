@@ -11,7 +11,7 @@ import { TestimonialsSection } from './components/Testimonials'
 
 const App = () => {
     return (
-        <VStack sx={{ width: '100%', height: '100%' }} bg="brand.300">
+        <VStack bg="brand.300">
             <NavBar />
             <IntoBanner />
             <DividerStyled text="SERVICES" />

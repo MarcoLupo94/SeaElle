@@ -62,9 +62,9 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
                 alignItems={'flex-start'}
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
             >
-                <Heading style={{ fontSize: '8rem' }} fontFamily={'Dancing Script'}>
+                {/* <Heading style={{ fontSize: '8rem' }} fontFamily={'Dancing Script'}>
                     SeaElle
-                </Heading>
+                </Heading> */}
                 <Heading fontSize="5xl"> Pastry Consultancy</Heading>
                 <Text fontSize="2xl" w="75%">
                     by Caroline Lerus-Roulez, Executive pastry chef and consultant.

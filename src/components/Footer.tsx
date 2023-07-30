@@ -2,14 +2,13 @@ import { Box, Flex, Link, Text } from '@chakra-ui/react'
 
 function Footer() {
     return (
-        <Box bg="brand.100" color="white" w="100%" h="2s0%" py={4}>
+        <Box bg="brand.100" color="white" w="100%" h="20%" py={4}>
             <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
                 <Box flex="1">
                     <Text
                         style={{ fontSize: '2rem' }}
                         fontWeight="bold"
                         fontFamily="Dancing Script"
-                        maxW="100px"
                         mx="auto"
                         mb={4}
                     >
