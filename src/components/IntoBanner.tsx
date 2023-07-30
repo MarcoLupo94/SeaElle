@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react'
-import { Button, HStack, Heading, Text, VStack } from '@chakra-ui/react'
+import { Button, HStack, Heading, Text, VStack, useBreakpointValue } from '@chakra-ui/react'
 
 interface IntoBannerProps {}
 
@@ -10,6 +10,7 @@ const property = {
 
 export const IntoBanner: FC<IntoBannerProps> = () => {
     const [backgroundOpacity, setBackgroundOpacity] = useState(1)
+    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
 
     const handleClick = (path: string) => {
         const targetSection = document.getElementById(path)
@@ -38,8 +39,9 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
     return (
         <HStack
             as="section"
-            paddingRight="40%"
-            paddingBottom="7%"
+            paddingRight={isMobile ? 0 : '40%'}
+            paddingLeft={isMobile ? '10%' : 0}
+            paddingBottom={isMobile ? 0 : '7%'}
             style={{
                 height: '100vh',
                 width: '100%',
@@ -58,15 +60,18 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
         >
             <VStack
                 color="white"
-                w="50%"
+                {...(!isMobile && { w: '60%' })}
                 alignItems={'flex-start'}
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
             >
-                {/* <Heading style={{ fontSize: '8rem' }} fontFamily={'Dancing Script'}>
+                <Heading
+                    style={isMobile ? { fontSize: '5rem' } : { fontSize: '8rem' }}
+                    fontFamily={'Dancing Script'}
+                >
                     SeaElle
-                </Heading> */}
-                <Heading fontSize="5xl"> Pastry Consultancy</Heading>
-                <Text fontSize="2xl" w="75%">
+                </Heading>
+                <Heading fontSize={isMobile ? '3xl' : '5xl'}> Pastry Consultancy</Heading>
+                <Text fontSize={isMobile ? 'xl' : '2xl'} w="75%">
                     by Caroline Lerus-Roulez, Executive pastry chef and consultant.
                 </Text>
                 <HStack>
