@@ -6,6 +6,7 @@ interface NavLinkProps {
     text: string
     color: string
     variant?: string
+    size?: string
 }
 
 export const NavLink: FC<NavLinkProps> = props => {

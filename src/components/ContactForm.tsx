@@ -21,11 +21,11 @@ function ContactForm() {
 
     const toast = useToast()
 
-    const handleInputChange = e => {
+    const handleInputChange = (e: { target: { name: string; value: string } }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = (e: { preventDefault: () => void }) => {
         e.preventDefault()
         // Here, you can add your logic for form submission, like sending an email or making an API call.
 
