@@ -1,10 +1,10 @@
-import { Flex, HStack, Heading, VStack, useBreakpointValue } from '@chakra-ui/react'
+import { Flex, HStack, VStack, useBreakpointValue } from '@chakra-ui/react'
 import { FC } from 'react'
-import { ServiceCard } from './ServiceCard'
-import { GiWhisk, GiChefToque } from 'react-icons/gi'
-import { BiCake } from 'react-icons/bi'
 import { IconType } from 'react-icons'
+import { BiCake } from 'react-icons/bi'
+import { GiChefToque, GiWhisk } from 'react-icons/gi'
 import { NavLink } from './NavLink'
+import { ServiceCard } from './ServiceCard'
 
 interface ServicesProps {}
 interface Service {
