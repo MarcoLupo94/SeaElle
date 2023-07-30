@@ -19,22 +19,22 @@ function ContactForm() {
         phone: '',
         subject: ''
     })
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const formRef = useRef<HTMLFormElement>('')
+
+    const formRef = useRef<HTMLFormElement>(null)
 
     const toast = useToast()
 
     const handleInputChange = (e: { target: { name: string; value: string } }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
-    if (!formRef.current) return
 
     const sendEmail = () => {
         emailjs
             .sendForm(
                 import.meta.env.VITE_EMAIL_ID,
                 import.meta.env.VITE_EMAIL_TEMPLATE,
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 formRef.current,
                 import.meta.env.VITE_EMAILJS_KEY
             )
