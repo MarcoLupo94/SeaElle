@@ -23,16 +23,22 @@ export const ServiceCard: FC<ServiceCardProps> = ({ title, content, icon, color 
     const cardHeight = useBreakpointValue({ base: 'auto', sm: '300px', md: '350px', lg: '400px' }) // Define height based on screen size
 
     return (
-        <Card width={cardWidth} height={cardHeight}>
-            <CardHeader color="white">
-                <Icon as={icon} mr="6" fontSize={'4xl'} color={color} />
-                <Heading fontSize="xl" color="black">
+        <Card
+            width={cardWidth}
+            height={cardHeight}
+            bg="transparent"
+            boxShadow={'none'}
+            textAlign={'center'}
+        >
+            <CardHeader>
+                <Icon as={icon} m={5} fontSize={'7xl'} color={color} />
+                <Heading fontSize="xl" color={color}>
                     {' '}
                     {title}
                 </Heading>
             </CardHeader>
             <CardBody>
-                <Text color="gray.700" fontSize="lg">
+                <Text color="black" fontSize="lg">
                     {content}
                 </Text>
             </CardBody>

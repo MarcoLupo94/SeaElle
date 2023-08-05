@@ -1,5 +1,6 @@
 import { Box, SimpleGrid, Text, Avatar, useBreakpointValue } from '@chakra-ui/react'
 import { FC } from 'react'
+import { DividerStyled } from './DividerStyled'
 
 // Sample testimonial data
 const testimonialsData = [
@@ -64,18 +65,21 @@ function TestimonialsSection() {
     const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
 
     return (
-        <Box id="testimonials" py={12} bg="transparent" minHeight="60vh">
-            <Box maxWidth={isMobile ? '80%' : '1200px'} mx="auto">
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-                    {testimonialsData.map(testimonial => (
-                        <CardComponent
-                            key={testimonial.id}
-                            name={testimonial.name}
-                            quote={testimonial.quote}
-                            avatarUrl={testimonial.avatarUrl}
-                        />
-                    ))}
-                </SimpleGrid>
+        <Box>
+            <DividerStyled text="TESTIMONIALS" />
+            <Box id="testimonials" py={12} minHeight="60vh">
+                <Box maxWidth={isMobile ? '80%' : '1200px'} mx="auto">
+                    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+                        {testimonialsData.map(testimonial => (
+                            <CardComponent
+                                key={testimonial.id}
+                                name={testimonial.name}
+                                quote={testimonial.quote}
+                                avatarUrl={testimonial.avatarUrl}
+                            />
+                        ))}
+                    </SimpleGrid>
+                </Box>
             </Box>
         </Box>
     )

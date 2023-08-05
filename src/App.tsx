@@ -11,19 +11,16 @@ import { TestimonialsSection } from './components/Testimonials'
 
 const App = () => {
     return (
-        <VStack bg="brand.300">
+        <VStack>
             <NavBar />
             <IntoBanner />
-            <DividerStyled text="SERVICES" />
             <Services />
-            <DividerStyled text="MY WORK" />
+            {/* <DividerStyled text="MY WORK" /> */}
             <Gallery />
-            <DividerStyled text="ABOUT ME" />
+            {/* <DividerStyled text="ABOUT ME" /> */}
             <AboutMeSection />
-            <DividerStyled text="TESTIMONIALS" />
-            <TestimonialsSection />
-            <DividerStyled text="CONTACT ME" />
             <ContactMeSection />
+            <TestimonialsSection />
             <Footer />
         </VStack>
     )

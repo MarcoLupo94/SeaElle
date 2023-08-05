@@ -48,6 +48,7 @@ export const Services: FC<ServicesProps> = () => {
             maxWidth={isMobile ? '80%' : '1200px'}
             mx="auto"
             justifyContent="space-evenly"
+            bg="white"
         >
             <Flex
                 direction={isMobile ? 'column' : 'row'} // Adjust the direction based on the screen size

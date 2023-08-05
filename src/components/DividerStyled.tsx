@@ -7,8 +7,7 @@ interface DividerStyledProps {
 const DividerStyled: FC<DividerStyledProps> = props => {
     const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
     return (
-        <Box width="100%" py={6} position="relative">
-            <Divider borderColor="gray.300" />
+        <Box width="100%" position="relative">
             <Box
                 {...props}
                 fontFamily="Dancing Script"
