@@ -1,7 +1,7 @@
-import { Button } from '@chakra-ui/react'
+import { Button, ButtonProps } from '@chakra-ui/react'
 import { FC } from 'react'
 
-interface NavLinkProps {
+interface NavLinkProps extends ButtonProps {
     path: string
     text: string
     color: string

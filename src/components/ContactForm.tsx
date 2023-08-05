@@ -1,17 +1,20 @@
-import { useRef, useState } from 'react'
 import {
-    Box,
+    Button,
     Flex,
     FormControl,
     FormLabel,
     Input,
     Textarea,
-    Button,
+    VStack,
+    useBreakpointValue,
     useToast
 } from '@chakra-ui/react'
 import emailjs from '@emailjs/browser'
+import { useRef, useState } from 'react'
 
 function ContactForm() {
+    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -78,11 +81,16 @@ function ContactForm() {
         })
     }
     return (
-        <Box p={4} bg="white" borderRadius="lg" boxShadow="md" color="black">
-            <form ref={formRef} onSubmit={handleSubmit}>
+        <VStack p={4} color="black" justifyContent={'flex-start'} w={isMobile ? '100%' : '60%'}>
+            <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                style={isMobile ? { width: '100%' } : { width: '60%' }}
+            >
                 <FormControl isRequired mb={4}>
                     <FormLabel>Name</FormLabel>
                     <Input
+                        bg="white"
                         type="text"
                         name="name"
                         placeholder="Your Name"
@@ -93,6 +101,7 @@ function ContactForm() {
                 <FormControl isRequired mb={4}>
                     <FormLabel>Subject</FormLabel>
                     <Input
+                        bg="white"
                         type="text"
                         name="subject"
                         placeholder="Subject of your message"
@@ -103,6 +112,7 @@ function ContactForm() {
                 <FormControl isRequired mb={4}>
                     <FormLabel>Email</FormLabel>
                     <Input
+                        bg="white"
                         type="email"
                         name="email"
                         placeholder="Your Email"
@@ -112,6 +122,7 @@ function ContactForm() {
                     <FormControl mb={4}>
                         <FormLabel>Phone number</FormLabel>
                         <Input
+                            bg="white"
                             type="tel"
                             name="phone"
                             placeholder="Your phone number"
@@ -123,6 +134,7 @@ function ContactForm() {
                 <FormControl isRequired mb={4}>
                     <FormLabel>Message</FormLabel>
                     <Textarea
+                        bg="white"
                         name="message"
                         placeholder="Your Message"
                         value={formData.message}
@@ -130,12 +142,12 @@ function ContactForm() {
                     />
                 </FormControl>
                 <Flex justifyContent="center">
-                    <Button type="submit" bg="brand.200" size="sm" color="white">
+                    <Button type="submit" bg="brand.100" size="md" color="white">
                         Send Message
                     </Button>
                 </Flex>
             </form>
-        </Box>
+        </VStack>
     )
 }
 

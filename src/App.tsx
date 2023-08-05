@@ -1,7 +1,6 @@
 import { VStack } from '@chakra-ui/react'
 import { AboutMeSection } from './components/AboutMe'
 import { ContactMeSection } from './components/ContactMe'
-import { DividerStyled } from './components/DividerStyled'
 import { Footer } from './components/Footer'
 import { Gallery } from './components/Gallery'
 import { IntoBanner } from './components/IntoBanner'
@@ -15,9 +14,7 @@ const App = () => {
             <NavBar />
             <IntoBanner />
             <Services />
-            {/* <DividerStyled text="MY WORK" /> */}
             <Gallery />
-            {/* <DividerStyled text="ABOUT ME" /> */}
             <AboutMeSection />
             <ContactMeSection />
             <TestimonialsSection />

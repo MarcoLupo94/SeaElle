@@ -1,4 +1,4 @@
-import { Box, Divider, useBreakpointValue } from '@chakra-ui/react'
+import { Box, useBreakpointValue } from '@chakra-ui/react'
 import { FC } from 'react'
 interface DividerStyledProps {
     text?: string
@@ -20,7 +20,7 @@ const DividerStyled: FC<DividerStyledProps> = props => {
                 style={isMobile ? { fontSize: '1rem' } : { fontSize: '1.5rem' }}
                 fontWeight="bold"
                 color="white"
-                borderRadius="md" // Adjust the border radius to match the Divider's rounded corners
+                borderRadius="3xl" // Adjust the border radius to match the Divider's rounded corners
                 boxShadow="sm" // Add a shadow to the text container
             >
                 {props.text}

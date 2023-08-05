@@ -1,5 +1,6 @@
-import { FC, useEffect, useState } from 'react'
+import { EmailIcon } from '@chakra-ui/icons'
 import { Button, HStack, Heading, Text, VStack, useBreakpointValue } from '@chakra-ui/react'
+import { FC, useEffect, useState } from 'react'
 
 interface IntoBannerProps {}
 
@@ -42,10 +43,9 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
             marginBottom={isMobile ? 0 : '2%'}
             as="section"
             paddingRight={isMobile ? 0 : '40%'}
-            paddingLeft={isMobile ? '10%' : 0}
+            paddingLeft={isMobile ? '12%' : 0}
             paddingBottom={isMobile ? 0 : '7%'}
             style={{
-                height: '100vh',
                 width: '100%',
                 backgroundImage: `linear-gradient(
           transparent,
@@ -57,6 +57,7 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
                 opacity: backgroundOpacity, // Set the opacity for the fade-in effect
                 transition: 'opacity 0.3s ease' // Add the transition property for smooth effect
             }}
+            h={isMobile ? '80vh' : '100vh'}
             justifyContent="center"
             bg="brand.300"
         >
@@ -86,6 +87,8 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
                         About
                     </Button>
                     <Button
+                        aria-label="contact me"
+                        leftIcon={<EmailIcon />}
                         color="white"
                         size={'lg'}
                         bg={'brand.200'}

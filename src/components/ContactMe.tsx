@@ -1,17 +1,25 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Flex, useBreakpointValue } from '@chakra-ui/react'
 import { ContactForm } from './ContactForm'
-import { DividerStyled } from './DividerStyled'
+import { ContactText } from './ContactText'
 
 function ContactMeSection() {
+    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
+
     return (
-        <Box id="contact-me" bg="brand.300" height="50%" w="100%">
-            <DividerStyled text="CONTACT ME" />
-            <Flex py={12} justifyContent="center" alignItems="center" flexWrap="wrap">
-                <Box flex="1" p={4} maxWidth="1000px">
-                    <ContactForm />
-                </Box>
-            </Flex>
-        </Box>
+        <Flex
+            direction={isMobile ? 'column' : 'row'}
+            id="contact-me"
+            alignItems={'center'}
+            h={isMobile ? '100%' : '70vh'}
+            w="100%"
+            bg="brand.300"
+            boxShadow={'sm'}
+            border={'1px'}
+            borderColor={'gray.200'}
+        >
+            <ContactText />
+            <ContactForm />
+        </Flex>
     )
 }
 

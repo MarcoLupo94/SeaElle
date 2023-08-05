@@ -44,17 +44,16 @@ export const Services: FC<ServicesProps> = () => {
     return (
         <VStack
             id="services"
-            height={{ base: 'auto', md: '80vh' }} // Adjust the height based on the screen size
+            height={{ base: '100%', md: '60vh' }} // Adjust the height based on the screen size
             maxWidth={isMobile ? '80%' : '1200px'}
+            mb={isMobile ? '10%' : '0'}
             mx="auto"
-            justifyContent="space-evenly"
             bg="white"
         >
             <Flex
                 direction={isMobile ? 'column' : 'row'} // Adjust the direction based on the screen size
                 gap={isMobile ? '6' : '10'} // Adjust the gap between cards based on the screen size
                 justifyContent={isMobile ? 'center' : 'space-evenly'}
-                marginBottom="10"
             >
                 {services.map((service, i) => (
                     <ServiceCard
@@ -67,7 +66,13 @@ export const Services: FC<ServicesProps> = () => {
                 ))}
             </Flex>
             <HStack justifyContent="center" width="100%">
-                <NavLink path="contact-me" text="Get in touch" color="brand.200" size="lg" />
+                <NavLink
+                    path="contact-me"
+                    text="Get in touch"
+                    color="brand.200"
+                    size="lg"
+                    fontSize={'xl'}
+                />
             </HStack>
         </VStack>
     )
