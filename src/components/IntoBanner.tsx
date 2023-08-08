@@ -39,6 +39,7 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
 
     return (
         <HStack
+            id="home"
             boxShadow="lg"
             marginBottom={isMobile ? 0 : '2%'}
             as="section"

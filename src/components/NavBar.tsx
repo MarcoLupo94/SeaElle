@@ -134,7 +134,7 @@ interface NavLinkProps {
     onClick?: () => void
 }
 
-const NavLink: FC<NavLinkProps> = ({ path, text, onClick }) => {
+export const NavLink: FC<NavLinkProps> = ({ path, text, onClick }) => {
     const handleClick = () => {
         const targetSection = document.getElementById(path)
 

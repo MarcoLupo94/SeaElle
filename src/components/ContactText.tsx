@@ -1,4 +1,4 @@
-import { Heading, VStack, Text, SimpleGrid, useBreakpointValue } from '@chakra-ui/react'
+import { HStack, Heading, Text, VStack, useBreakpointValue } from '@chakra-ui/react'
 import { FC } from 'react'
 import { SocialLink } from './SocialLink'
 
@@ -14,29 +14,32 @@ export const ContactText: FC<ContactTextProps> = () => {
     const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
 
     return (
-        <VStack
-            alignItems={'flex-end'}
-            w={isMobile ? '100%' : '50%'}
-            p={isMobile ? 5 : 0}
-            alignContent={'flex-start'}
-            h="80%"
-        >
-            <VStack alignItems={'flex-start'}>
-                <Heading color="brand.100" fontWeight={'bold'} as="h3" fontSize={'6xl'}>
+        <VStack w={isMobile ? '100%' : '100%'} mt={10} alignContent={'flex-start'} h="80%">
+            <VStack alignItems={'flex-start'} w="65%" gap={3}>
+                <Heading
+                    fontFamily={'Dancing Script'}
+                    color="brand.100"
+                    fontWeight={'bold'}
+                    as="h3"
+                    fontSize={'6xl'}
+                >
                     Contact
                 </Heading>
-                <Text fontSize={'2xl'}>Get in touch with me via social media or email.</Text>
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mt={5}>
+                <Text fontWeight="normal" fontSize={'2xl'}>
+                    Get in touch with me via social media or email.
+                </Text>
+                <HStack spacing={8}>
                     {!isMobile &&
-                        socials.map(social => (
+                        socials.map((social, i) => (
                             <SocialLink
+                                key={(i + 1) * 17}
                                 text={social.text}
                                 src={social.src}
                                 href={social.href}
                                 color={social.color}
                             />
                         ))}
-                </SimpleGrid>
+                </HStack>
             </VStack>
         </VStack>
     )

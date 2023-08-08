@@ -1,27 +1,26 @@
 import {
+    Box,
     Button,
     Flex,
     FormControl,
     FormLabel,
+    Grid,
+    HStack,
     Input,
     Textarea,
-    VStack,
-    useBreakpointValue,
     useToast
 } from '@chakra-ui/react'
 import emailjs from '@emailjs/browser'
 import { useRef, useState } from 'react'
 
 function ContactForm() {
-    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
-
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: '',
-        phone: '',
         subject: ''
     })
+    const [loader, setLoader] = useState(false)
 
     const formRef = useRef<HTMLFormElement>(null)
 
@@ -43,6 +42,7 @@ function ContactForm() {
             )
             .then(
                 () => {
+                    setLoader(false)
                     // Display a success toast message after form submission
                     toast({
                         title: 'Message Sent',
@@ -53,6 +53,8 @@ function ContactForm() {
                     })
                 },
                 () => {
+                    setLoader(false)
+
                     // Display a success toast message after form submission
                     toast({
                         title: 'Error Sending Message',
@@ -68,7 +70,15 @@ function ContactForm() {
 
     const handleSubmit = (e: { preventDefault: () => void }) => {
         e.preventDefault()
-        // Here, you can add your logic for form submission, like sending an email or making an API call.
+        if (!formData.name || !formData.email || !formData.message || !formData.subject)
+            return toast({
+                title: 'Please fill out all the fields',
+                description: 'We were not able to send your message. Please try again.',
+                status: 'error',
+                duration: 5000,
+                isClosable: true
+            })
+        setLoader(true)
         sendEmail()
 
         // Clear the form fields after submission
@@ -76,78 +86,108 @@ function ContactForm() {
             name: '',
             email: '',
             message: '',
-            phone: '',
             subject: ''
         })
     }
     return (
-        <VStack p={4} color="black" justifyContent={'flex-start'} w={isMobile ? '100%' : '60%'}>
-            <form
-                ref={formRef}
-                onSubmit={handleSubmit}
-                style={isMobile ? { width: '100%' } : { width: '60%' }}
-            >
-                <FormControl isRequired mb={4}>
-                    <FormLabel>Name</FormLabel>
-                    <Input
-                        bg="white"
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                    />
-                </FormControl>
-                <FormControl isRequired mb={4}>
-                    <FormLabel>Subject</FormLabel>
-                    <Input
-                        bg="white"
-                        type="text"
-                        name="subject"
-                        placeholder="Subject of your message"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                    />
-                </FormControl>
-                <FormControl isRequired mb={4}>
-                    <FormLabel>Email</FormLabel>
-                    <Input
-                        bg="white"
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                    />
-                    <FormControl mb={4}>
-                        <FormLabel>Phone number</FormLabel>
-                        <Input
-                            bg="white"
-                            type="tel"
-                            name="phone"
-                            placeholder="Your phone number"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                        />
-                    </FormControl>
-                </FormControl>
-                <FormControl isRequired mb={4}>
-                    <FormLabel>Message</FormLabel>
-                    <Textarea
-                        bg="white"
-                        name="message"
-                        placeholder="Your Message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                    />
-                </FormControl>
-                <Flex justifyContent="center">
-                    <Button type="submit" bg="brand.100" size="md" color="white">
-                        Send Message
-                    </Button>
-                </Flex>
+        <HStack w="100%" bg="backgrounds.200" justifyContent={'center'} zIndex={10}>
+            <form ref={formRef} onSubmit={handleSubmit} style={{ width: '65%' }}>
+                <Grid templateColumns="repeat(2, 1fr)" templateRows="auto 1fr" gap={4}>
+                    <Box>
+                        <FormControl mb={4}>
+                            <FormLabel fontSize={'lg'} fontWeight={'light'}>
+                                Name
+                            </FormLabel>
+                            <Input
+                                _focus={{
+                                    border: '#333333 solid 2px',
+                                    boxShadow: 'none' // Remove the default box shadow
+                                }}
+                                borderRadius="4px"
+                                boxShadow="inset 0 1px 2px 0px rgba(0, 0, 0, 0.1)"
+                                border="#949494 solid 1px"
+                                bg="backgrounds.100"
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleInputChange}
+                            />
+                        </FormControl>
+                        <FormControl mb={4}>
+                            <FormLabel fontSize={'lg'} fontWeight={'light'}>
+                                Subject
+                            </FormLabel>
+                            <Input
+                                _focus={{
+                                    border: '#333333 solid 2px',
+                                    boxShadow: 'none' // Remove the default box shadow
+                                }}
+                                borderRadius="4px"
+                                boxShadow="inset 0 1px 2px 0px rgba(0, 0, 0, 0.1)"
+                                border="#949494 solid 1px"
+                                bg="backgrounds.100"
+                                type="text"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleInputChange}
+                            />
+                        </FormControl>
+                        <FormControl mb={4}>
+                            <FormLabel fontWeight={'light'} fontSize={'lg'}>
+                                Email
+                            </FormLabel>
+                            <Input
+                                boxShadow="inset 0 1px 2px 0px rgba(0, 0, 0, 0.1)"
+                                border="#949494 solid 1px"
+                                _focus={{
+                                    border: '#333333 solid 2px',
+                                    boxShadow: 'none' // Remove the default box shadow
+                                }}
+                                borderRadius="4px"
+                                bg="backgrounds.100"
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                            />
+                        </FormControl>
+                    </Box>
+                    <Box position="relative">
+                        <FormControl mb={4}>
+                            <FormLabel fontWeight={'light'} fontSize={'lg'}>
+                                Message
+                            </FormLabel>
+                            <Textarea
+                                _focus={{
+                                    border: '#333333 solid 2px',
+                                    boxShadow: 'none' // Remove the default box shadow
+                                }}
+                                borderRadius="4px"
+                                h="223px"
+                                resize="none"
+                                boxShadow="inset 0 1px 2px 0px rgba(0, 0, 0, 0.1)"
+                                border="#949494 solid 1px"
+                                bg="backgrounds.100"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                            />
+                        </FormControl>
+                        <Flex justifyContent="flex-end">
+                            <Button
+                                isLoading={loader}
+                                type="submit"
+                                bg="brand.100"
+                                size="lg"
+                                color="white"
+                            >
+                                Send Message
+                            </Button>
+                        </Flex>
+                    </Box>
+                </Grid>
             </form>
-        </VStack>
+        </HStack>
     )
 }
 

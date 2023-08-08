@@ -1,4 +1,5 @@
 import { Box, Flex, Link, Text } from '@chakra-ui/react'
+import { NavLink } from './NavBar'
 
 function Footer() {
     return (
@@ -21,38 +22,12 @@ function Footer() {
                 </Box>
                 <Box flex="1">
                     <Flex justifyContent="center" alignItems="center">
-                        <Link
-                            href="#"
-                            fontSize="sm"
-                            color="whiteAlpha.700"
-                            mx={2}
-                            _hover={{ color: 'brand.500' }}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            href="#about"
-                            fontSize="sm"
-                            color="whiteAlpha.700"
-                            mx={2}
-                            _hover={{ color: 'brand.500' }}
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href="#services"
-                            fontSize="sm"
-                            color="whiteAlpha.700"
-                            mx={2}
-                            _hover={{ color: 'brand.500' }}
-                        >
-                            Services
-                        </Link>
+                        <NavLink text="home" path={'home'} />
+                        <NavLink text="about" path={'about'} />
+                        <NavLink text="services" path={'services'} />
+
                         {/* Add more links as needed */}
                     </Flex>
-                    <Text textAlign="center" fontSize="sm" mt={2}>
-                        Privacy Policy | Terms of Use
-                    </Text>
                 </Box>
             </Flex>
         </Box>
