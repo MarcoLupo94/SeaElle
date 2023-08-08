@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import { NavLink } from './NavBar'
 
 function Footer() {

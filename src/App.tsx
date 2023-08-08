@@ -10,7 +10,7 @@ import { TestimonialsSection } from './components/Testimonials'
 
 const App = () => {
     return (
-        <VStack>
+        <VStack overflowX={'hidden'}>
             <NavBar />
             <IntoBanner />
             <Services />
