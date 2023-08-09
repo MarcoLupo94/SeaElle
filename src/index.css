@@ -69,3 +69,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.zoom-overlay {
+
+}
+
+.zoomed-image {
+
+}
+
+.zoomed-image:hover {
+  filter: blur(0);
+  transform: scale(1.2);
+}

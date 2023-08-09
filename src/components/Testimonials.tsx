@@ -14,13 +14,6 @@ import { BiSolidQuoteAltLeft } from 'react-icons/bi'
 // Sample testimonial data
 const testimonialsData = [
     {
-        id: 'asd2131dasd',
-        name: 'John Doe',
-        company: 'NY Times',
-        quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget turpis justo. Aenean dignissim aliquet purus nec ultricies.',
-        avatarUrl: '/path/to/avatars/avatar1.jpg' // Replace with the actual avatar URL
-    },
-    {
         id: '213ASDDXad',
         name: 'Jane Smith',
         company: 'Bisous Bisous',
@@ -44,7 +37,7 @@ interface CardComponentProps {
 
 const CardComponent: FC<CardComponentProps> = ({ name, company, quote }) => {
     return (
-        <HStack color="white" mb={4} mt={4}>
+        <HStack mb={4} mt={4} p={6} bg="#F8F8F8" borderRadius={'10px'}>
             <VStack display="flex" alignItems="flex-start" mb={2}>
                 <Icon as={BiSolidQuoteAltLeft} fontSize={25} mr={2} color="brand.200" />
                 <Text w="90%" color="black" fontSize="xl" fontStyle="italic">

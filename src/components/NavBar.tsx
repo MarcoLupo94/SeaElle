@@ -2,6 +2,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import {
     Box,
     Link as ChakraLink,
+    ChakraProps,
     Drawer,
     DrawerBody,
     DrawerCloseButton,
@@ -50,7 +51,7 @@ export const NavBar: FC<NavBarProps> = () => {
             top={0}
             left={0}
             right={0}
-            zIndex="1000"
+            zIndex="45"
             style={{
                 transition: 'background-color 0.3s, color 0.3s, box-shadow 0.3s' // Add smooth transitions
             }}
@@ -128,13 +129,13 @@ export const NavBar: FC<NavBarProps> = () => {
     )
 }
 
-interface NavLinkProps {
+interface NavLinkProps extends ChakraProps {
     path: string
     text: string
     onClick?: () => void
 }
 
-export const NavLink: FC<NavLinkProps> = ({ path, text, onClick }) => {
+export const NavLink: FC<NavLinkProps> = ({ path, text, onClick, ...props }) => {
     const handleClick = () => {
         const targetSection = document.getElementById(path)
 
@@ -153,7 +154,7 @@ export const NavLink: FC<NavLinkProps> = ({ path, text, onClick }) => {
                 fontSize="sm"
                 fontWeight="semibold" // Use "semibold" for a bolder font weight
                 textTransform="uppercase" // Convert text to uppercase
-                color="white"
+                color={props.color ? props.color : 'white'}
                 style={{ textDecoration: 'none' }}
                 _hover={{ color: 'brand.500' }} // Change color on hover
             >

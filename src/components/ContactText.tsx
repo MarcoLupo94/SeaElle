@@ -5,9 +5,7 @@ import { SocialLink } from './SocialLink'
 interface ContactTextProps {}
 const socials = [
     { color: '#ef0074', text: 'Instragram', href: '', src: 'insta.png' },
-    { color: '#0175B4', text: 'Linkedin', href: '', src: 'ln.png' },
-    { color: '#89D891', text: 'WhatsApp', href: '', src: 'wa.png' },
-    { color: '#3749A2', text: 'Facebook', href: '', src: 'fb.png' }
+    { color: '#0175B4', text: 'Linkedin', href: '', src: 'ln.png' }
 ]
 
 export const ContactText: FC<ContactTextProps> = () => {
