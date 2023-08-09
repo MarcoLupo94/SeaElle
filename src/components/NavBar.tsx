@@ -68,7 +68,7 @@ export const NavBar: FC<NavBarProps> = () => {
             >
                 <NavLink path="services" text="Services" />
                 <NavLink path="about" text="About Me" />
-                <NavLink path="portfolio" text="Gallery" />
+                <NavLink path="portfolio" text="Portfolio" />
                 <NavLink path="testimonials" text="Testimonials" />
                 <NavLink path="contact-me" text="Contact Me" />
             </Flex>
@@ -107,7 +107,7 @@ export const NavBar: FC<NavBarProps> = () => {
                                 <NavLink path="about" text="About Me" onClick={handleMenuToggle} />
                                 <NavLink
                                     path="portfolio"
-                                    text="Gallery"
+                                    text="Portfolio"
                                     onClick={handleMenuToggle}
                                 />
                                 <NavLink

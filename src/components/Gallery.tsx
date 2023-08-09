@@ -9,6 +9,7 @@ interface GalleryProps {
 export const Gallery: FC<GalleryProps> = ({ click }) => {
     return (
         <VStack
+            id="portfolio"
             w="100%"
             bg={'brand.300'}
             borderColor={'gray.200'}

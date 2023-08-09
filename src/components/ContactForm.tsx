@@ -177,7 +177,7 @@ function ContactForm() {
                             <Button
                                 isLoading={loader}
                                 type="submit"
-                                bg="brand.100"
+                                bg="brand.200"
                                 size="lg"
                                 color="white"
                             >
