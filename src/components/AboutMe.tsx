@@ -23,10 +23,16 @@ function AboutMeSection() {
                 <Text textAlign="left" fontSize="2xl" fontWeight="normal" mb={2} mt={2}>
                     Hi, I'm Caroline
                 </Text>
-                <Text textAlign="left" fontSize={'xl'} w="90%">
-                    I am a passionate web developer with a love for creating beautiful and
-                    functional websites. My journey began with coding in [your favorite language]
-                    and I have been honing my skills ever since.
+                <Text textAlign="left" fontSize={'lg'} w="90%">
+                    I am an Executive Head Pastry Chef with over 10 years of experience in the
+                    industry. From american style bakeries to 5 star hotels, as well as french
+                    restaurants and bread making bakery; I thrive on widening my knowledge, learning
+                    from great, talented pastry chefs and teaching anyone wiling to learn. I am
+                    deeply passionate about all styles of baking but I specialize in dairy free,
+                    gluten free and vegan patisseries. After realizing the gap in dairy free baking
+                    content, I decided to start sharing my knowledge and expertise to allow everyone
+                    to explore and enjoy different ways of baking and learn how to successfully make
+                    amazing cakes and desserts without any dairy (and other allergens).
                 </Text>
             </Box>
             <Box>

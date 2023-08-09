@@ -19,11 +19,18 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 interface GalleryTabProps {
     click: (imageSrc: string) => void
 }
+interface TabData {
+    label: string
+    content: string[]
+}
 const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
     const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
 
     // 1. Create the component
-    function DataTabs({ data }) {
+    interface DataTabsProps {
+        data: TabData[]
+    }
+    const DataTabs: FC<DataTabsProps> = ({ data }) => {
         return (
             <Tabs w="70%">
                 <TabList justifyContent={'center'}>
@@ -69,7 +76,8 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
     }
 
     // 2. Create an array of data
-    const tabData = [
+
+    const tabData: TabData[] = [
         {
             label: 'Cakes',
             content: [
@@ -109,8 +117,10 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
 
     return isMobile ? <CarouselSection data={tabData} /> : <DataTabs data={tabData} />
 }
-
-const CarouselSection = ({ data }) => {
+interface CarouselSectionProps {
+    data: TabData[]
+}
+const CarouselSection: FC<CarouselSectionProps> = ({ data }) => {
     return (
         <Carousel
             autoPlay
@@ -152,7 +162,7 @@ const CarouselSection = ({ data }) => {
             )}
         >
             {data
-                .reduce((acc, curr) => {
+                .reduce((acc: string[], curr) => {
                     return [...acc, ...curr.content]
                 }, [])
                 .slice(0, 10)
