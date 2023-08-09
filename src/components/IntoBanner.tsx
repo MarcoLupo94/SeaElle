@@ -6,7 +6,7 @@ interface IntoBannerProps {}
 
 const property = {
     imageUrl:
-        'https://res.cloudinary.com/dytcr3b3j/image/upload/v1690730285/bg.jpg_16-14-20-198_u61pm7.jpg'
+        'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691610415/Untitled_design_7_1_yc7ia0.png'
 }
 
 export const IntoBanner: FC<IntoBannerProps> = () => {
@@ -66,7 +66,7 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
                 color="white"
                 {...(!isMobile && { w: '60%' })}
                 alignItems={'flex-start'}
-                style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
+                style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
             >
                 <Heading
                     style={isMobile ? { fontSize: '5rem' } : { fontSize: '8rem' }}
