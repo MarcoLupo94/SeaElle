@@ -126,10 +126,11 @@ export const NavBar: FC<NavBarProps> = () => {
 interface NavLinkProps extends ChakraProps {
     path: string
     text: string
+    lower?: boolean
     onClick?: () => void
 }
 
-export const NavLink: FC<NavLinkProps> = ({ path, text, onClick, ...props }) => {
+export const NavLink: FC<NavLinkProps> = ({ path, text, onClick, lower, ...props }) => {
     const handleClick = () => {
         const targetSection = document.getElementById(path)
 
@@ -147,7 +148,7 @@ export const NavLink: FC<NavLinkProps> = ({ path, text, onClick, ...props }) => 
             <ChakraLink
                 fontSize="sm"
                 fontWeight="semibold" // Use "semibold" for a bolder font weight
-                textTransform="uppercase" // Convert text to uppercase
+                textTransform={lower ? 'none' : 'uppercase'} // Convert text to uppercase
                 color={props.color ? props.color : 'white'}
                 style={{ textDecoration: 'none' }}
                 _hover={{ color: 'brand.500' }} // Change color on hover
