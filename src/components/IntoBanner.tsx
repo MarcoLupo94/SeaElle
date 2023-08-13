@@ -50,7 +50,7 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
                 width: '100%',
                 backgroundImage: `linear-gradient(
           transparent,
-          rgba(0, 0, 0, 0.2)
+          rgba(0, 0, 0, 0.5)
         ), url(${property.imageUrl})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
@@ -63,20 +63,24 @@ export const IntoBanner: FC<IntoBannerProps> = () => {
             bg="brand.300"
         >
             <VStack
+                marginTop={[0, 100]}
+                marginLeft={[0, 100]}
                 color="white"
-                {...(!isMobile && { w: '60%' })}
+                w={isMobile ? '100%' : '60%'}
                 alignItems={'flex-start'}
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
+                gap={5}
             >
                 <Heading
-                    style={isMobile ? { fontSize: '5rem' } : { fontSize: '8rem' }}
+                    style={isMobile ? { fontSize: '4rem' } : { fontSize: '8rem' }}
                     fontFamily={'Dancing Script'}
                 >
                     SeaElle
                 </Heading>
-                <Heading fontSize={isMobile ? '3xl' : '5xl'}> Pastry Consultancy</Heading>
-                <Text fontSize={isMobile ? 'xl' : '2xl'} w="75%">
-                    by Caroline Lerus-Roulez, Executive pastry chef and consultant.
+                <Heading fontSize={isMobile ? '2xl' : '5xl'}> Pastry Consultancy</Heading>
+                <Text fontSize={isMobile ? 'lg' : '2xl'} w="75%">
+                    by Caroline Lerus-Roulez, <br />
+                    Executive pastry chef and consultant.
                 </Text>
                 <HStack>
                     <Button

@@ -65,7 +65,7 @@ export const Services: FC<ServicesProps> = () => {
                     />
                 ))}
             </Flex>
-            <HStack justifyContent="center" width="100%">
+            <HStack justifyContent="center" width="100%" mt={isMobile ? 8 : 0}>
                 <NavLink
                     path="contact-me"
                     text="Get in touch"

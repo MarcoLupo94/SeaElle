@@ -5,9 +5,10 @@ import {
     FormControl,
     FormLabel,
     Grid,
-    HStack,
+    Heading,
     Input,
     Textarea,
+    useBreakpointValue,
     useToast
 } from '@chakra-ui/react'
 import emailjs from '@emailjs/browser'
@@ -43,7 +44,6 @@ function ContactForm() {
             .then(
                 () => {
                     setLoader(false)
-                    // Display a success toast message after form submission
                     toast({
                         title: 'Message Sent',
                         description: 'Your message has been sent successfully!',
@@ -54,8 +54,6 @@ function ContactForm() {
                 },
                 () => {
                     setLoader(false)
-
-                    // Display a success toast message after form submission
                     toast({
                         title: 'Error Sending Message',
                         description:
@@ -80,8 +78,6 @@ function ContactForm() {
             })
         setLoader(true)
         sendEmail()
-
-        // Clear the form fields after submission
         setFormData({
             name: '',
             email: '',
@@ -89,19 +85,44 @@ function ContactForm() {
             subject: ''
         })
     }
+
+    const isMobile = useBreakpointValue({ base: true, md: false })
+
     return (
-        <HStack w="100%" bg="backgrounds.200" justifyContent={'center'} zIndex={10}>
-            <form ref={formRef} onSubmit={handleSubmit} style={{ width: '65%' }}>
-                <Grid templateColumns="repeat(2, 1fr)" templateRows="auto 1fr" gap={4}>
+        <Flex
+            as="section"
+            w="100%"
+            h={isMobile ? 'auto' : '60vh'}
+            boxShadow="0px 2px 3px 0px rgba(0, 0, 0, 0.04)"
+            borderTop="none"
+            borderLeft="solid 1px #dddddd"
+            borderRight="solid 1px #dddddd"
+            borderBottom="solid 1px #dddddd"
+            bg="backgrounds.200"
+            zIndex={10}
+            justifyContent={'center'}
+            p={{ base: '2rem', md: '3.4rem 4rem' }} // Adjust padding
+            pt={[0, 0]}
+        >
+            <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                style={isMobile ? { width: '100%' } : { width: '69%' }}
+            >
+                <Grid
+                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} // Adjust template columns
+                    templateRows={{ base: 'auto', md: 'auto 1fr' }} // Adjust template rows
+                    gap={4}
+                >
                     <Box>
                         <FormControl mb={4}>
-                            <FormLabel fontSize={'lg'} fontWeight={'light'}>
+                            <FormLabel fontSize="lg" fontWeight="light">
                                 Name
                             </FormLabel>
                             <Input
                                 _focus={{
                                     border: '#333333 solid 2px',
-                                    boxShadow: 'none' // Remove the default box shadow
+                                    boxShadow: 'none'
                                 }}
                                 borderRadius="4px"
                                 boxShadow="inset 0 1px 2px 0px rgba(0, 0, 0, 0.1)"
@@ -114,13 +135,13 @@ function ContactForm() {
                             />
                         </FormControl>
                         <FormControl mb={4}>
-                            <FormLabel fontSize={'lg'} fontWeight={'light'}>
+                            <FormLabel fontSize="lg" fontWeight="light">
                                 Subject
                             </FormLabel>
                             <Input
                                 _focus={{
                                     border: '#333333 solid 2px',
-                                    boxShadow: 'none' // Remove the default box shadow
+                                    boxShadow: 'none'
                                 }}
                                 borderRadius="4px"
                                 boxShadow="inset 0 1px 2px 0px rgba(0, 0, 0, 0.1)"
@@ -133,7 +154,7 @@ function ContactForm() {
                             />
                         </FormControl>
                         <FormControl mb={4}>
-                            <FormLabel fontWeight={'light'} fontSize={'lg'}>
+                            <FormLabel fontWeight="light" fontSize="lg">
                                 Email
                             </FormLabel>
                             <Input
@@ -141,7 +162,7 @@ function ContactForm() {
                                 border="#949494 solid 1px"
                                 _focus={{
                                     border: '#333333 solid 2px',
-                                    boxShadow: 'none' // Remove the default box shadow
+                                    boxShadow: 'none'
                                 }}
                                 borderRadius="4px"
                                 bg="backgrounds.100"
@@ -154,16 +175,16 @@ function ContactForm() {
                     </Box>
                     <Box position="relative">
                         <FormControl mb={4}>
-                            <FormLabel fontWeight={'light'} fontSize={'lg'}>
+                            <FormLabel fontWeight="light" fontSize="lg">
                                 Message
                             </FormLabel>
                             <Textarea
                                 _focus={{
                                     border: '#333333 solid 2px',
-                                    boxShadow: 'none' // Remove the default box shadow
+                                    boxShadow: 'none'
                                 }}
                                 borderRadius="4px"
-                                h="223px"
+                                h={{ base: '150px', md: '223px' }} // Adjust height
                                 resize="none"
                                 boxShadow="inset 0 1px 2px 0px rgba(0, 0, 0, 0.1)"
                                 border="#949494 solid 1px"
@@ -173,21 +194,22 @@ function ContactForm() {
                                 onChange={handleInputChange}
                             />
                         </FormControl>
-                        <Flex justifyContent="flex-end">
+                        <Flex justifyContent={['center', 'flex-end']}>
                             <Button
                                 isLoading={loader}
                                 type="submit"
-                                bg="brand.200"
+                                bg="brand.100"
                                 size="lg"
                                 color="white"
+                                w={['100%', 'auto']}
                             >
-                                Send Message
+                                Send Email
                             </Button>
                         </Flex>
                     </Box>
                 </Grid>
             </form>
-        </HStack>
+        </Flex>
     )
 }
 

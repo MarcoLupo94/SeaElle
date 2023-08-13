@@ -28,17 +28,17 @@ export const ServiceCard: FC<ServiceCardProps> = ({ title, content, icon, color 
             height={cardHeight}
             bg="transparent"
             boxShadow={'none'}
-            textAlign={'center'}
+            textAlign={['left', 'center']}
         >
             <CardHeader>
-                <Icon as={icon} m={5} fontSize={'7xl'} color={color} />
+                <Icon as={icon} m={[0, 5]} mb={[2, 0]} fontSize={['5xl', '7xl']} color={color} />
                 <Heading fontSize="xl" color={color}>
                     {' '}
                     {title}
                 </Heading>
             </CardHeader>
             <CardBody>
-                <Text color="black" fontSize="lg" textAlign={'center'}>
+                <Text color="black" fontSize={['md', 'lg']} textAlign={['left', 'center']} mt={-6}>
                     {content}
                 </Text>
             </CardBody>
