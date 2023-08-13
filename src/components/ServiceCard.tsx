@@ -38,7 +38,12 @@ export const ServiceCard: FC<ServiceCardProps> = ({ title, content, icon, color 
                 </Heading>
             </CardHeader>
             <CardBody>
-                <Text color="black" fontSize={['md', 'lg']} textAlign={['left', 'center']} mt={-6}>
+                <Text
+                    color="#757575"
+                    fontSize={['md', 'lg']}
+                    textAlign={['left', 'center']}
+                    mt={-6}
+                >
                     {content}
                 </Text>
             </CardBody>

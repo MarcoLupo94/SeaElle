@@ -37,9 +37,10 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
                     {data.map((tab, index) => (
                         <Tab
                             key={index}
-                            color="brand.100"
+                            color="#757575"
+                            fontWeight={'semibold'}
                             fontSize={'lg'}
-                            _selected={{ color: 'black' }}
+                            _selected={{ color: '#946070', fontWeight: 'bold' }}
                         >
                             {tab.label}
                         </Tab>

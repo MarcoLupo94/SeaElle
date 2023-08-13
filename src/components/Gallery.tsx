@@ -31,7 +31,7 @@ export const Gallery: FC<GalleryProps> = ({ click }) => {
                 >
                     Portfolio
                 </Heading>
-                <Text fontSize={['lg', '2xl']} color="black">
+                <Text fontSize={['md', '2xl']} color="black">
                     SOME OF MY WORK
                 </Text>
             </VStack>

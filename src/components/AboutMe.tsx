@@ -33,10 +33,10 @@ function AboutMeSection() {
                 >
                     About Me
                 </Heading>
-                <Text textAlign="left" fontSize={['2xl', '4xl']} fontWeight="normal" mb={2} mt={2}>
-                    Hi, I'm Caroline
+                <Text textAlign="left" fontSize={['md', '2xl']} fontWeight="normal" mb={2} mt={2}>
+                    HI, I'M CAROLINE
                 </Text>
-                <Text textAlign="left" fontSize={['md', 'xl']} w="100%">
+                <Text textAlign="left" fontSize={['md', 'xl']} w="100%" color={'#757575'}>
                     I am an Executive Head Pastry Chef with over 10 years of experience in the
                     industry. From american style bakeries to 5 star hotels, as well as french
                     restaurants and bread making bakery; I thrive on widening my knowledge, learning
