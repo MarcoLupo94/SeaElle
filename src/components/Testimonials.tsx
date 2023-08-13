@@ -15,7 +15,7 @@ import { BiSolidQuoteAltLeft } from 'react-icons/bi'
 const testimonialsData = [
     {
         id: '213ASDDXad',
-        name: 'Jane Smith',
+        name: 'Alex Moreau',
         company: 'Bisous Bisous',
         quote: 'Praesent congue justo id odio faucibus, vitae consequat velit bibendum. Suspendisse non enim tincidunt, tempor dolor nec, consequat nibh.',
         avatarUrl: '/path/to/avatars/avatar2.jpg' // Replace with the actual avatar URL
@@ -23,7 +23,7 @@ const testimonialsData = [
     {
         id: 's401dasaxaw',
         name: 'Jane Smith',
-        company: 'Caramello',
+        company: 'NyTimes',
         quote: 'Praesent congue justo id odio faucibus, vitae consequat velit bibendum. Suspendisse non enim tincidunt, tempor dolor nec, consequat nibh.',
         avatarUrl: '/path/to/avatars/avatar2.jpg' // Replace with the actual avatar URL
     }
