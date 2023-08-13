@@ -18,19 +18,20 @@ export const Gallery: FC<GalleryProps> = ({ click }) => {
             zIndex={40}
             p={10}
             justifyContent={'space-between'}
+            alignItems={['flex-start', 'center']}
         >
-            <VStack>
+            <VStack alignItems={['flex-start', 'center']}>
                 <Heading
                     fontFamily={'Dancing Script'}
                     color="brand.100"
                     fontWeight={'bold'}
                     as="h3"
-                    fontSize={'7xl'}
+                    fontSize={['5xl', '7xl']}
                     textAlign={'left'}
                 >
                     Portfolio
                 </Heading>
-                <Text fontSize={'2xl'} color="black">
+                <Text fontSize={['lg', '2xl']} color="black">
                     SOME OF MY WORK
                 </Text>
             </VStack>

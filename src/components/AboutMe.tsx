@@ -3,8 +3,9 @@ import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
 function AboutMeSection() {
     return (
         <Flex
+            direction={['column-reverse', 'row']}
+            gap={[3, 20]}
             justifyContent="center"
-            gap={20}
             alignItems="center"
             id="about"
             color="black"
@@ -21,21 +22,21 @@ function AboutMeSection() {
                     border="2px solid #946070"
                 />
             </Box>
-            <Box w="40%" height="600px">
+            <Box w={['80%', '40%']} height="600px">
                 <Heading
                     fontFamily={'Dancing Script'}
                     color="brand.100"
                     fontWeight={'bold'}
                     as="h3"
-                    fontSize={'7xl'}
+                    fontSize={['5xl', '7xl']}
                     textAlign={'left'}
                 >
                     About Me
                 </Heading>
-                <Text textAlign="left" fontSize="4xl" fontWeight="normal" mb={2} mt={2}>
+                <Text textAlign="left" fontSize={['2xl', '4xl']} fontWeight="normal" mb={2} mt={2}>
                     Hi, I'm Caroline
                 </Text>
-                <Text textAlign="left" fontSize={'xl'} w="100%">
+                <Text textAlign="left" fontSize={['md', 'xl']} w="100%">
                     I am an Executive Head Pastry Chef with over 10 years of experience in the
                     industry. From american style bakeries to 5 star hotels, as well as french
                     restaurants and bread making bakery; I thrive on widening my knowledge, learning
