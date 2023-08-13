@@ -37,13 +37,18 @@ interface CardComponentProps {
 
 const CardComponent: FC<CardComponentProps> = ({ name, company, quote }) => {
     return (
-        <HStack mb={4} mt={4} p={6} bg="#F8F8F8" borderRadius={'10px'}>
+        <HStack mb={[0, 4]} mt={[0, 4]} p={[4, 6]} bg="#F8F8F8" borderRadius={'10px'}>
             <VStack display="flex" alignItems="flex-start" mb={2}>
                 <Icon as={BiSolidQuoteAltLeft} fontSize={25} mr={2} color="brand.200" />
-                <Text w="90%" color="black" fontSize="xl" fontStyle="italic">
+                <Text w="90%" color="black" fontSize={['lg,', 'xl']} fontStyle="italic">
                     {quote}
                 </Text>
-                <Text color="brand.400" fontSize="lg" fontWeight="italic" fontStyle="italic">
+                <Text
+                    color="brand.400"
+                    fontSize={['md', 'lg']}
+                    fontWeight="italic"
+                    fontStyle="italic"
+                >
                     - {name}, {company}
                 </Text>
             </VStack>
@@ -55,14 +60,14 @@ function TestimonialsSection() {
     const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
 
     return (
-        <Box w="65%">
+        <Box w={['80%', '65%']}>
             <Heading
                 fontFamily={'Dancing Script'}
                 color="brand.100"
                 fontWeight={'bold'}
                 as="h3"
-                fontSize={'6xl'}
-                textAlign={'left'}
+                fontSize={['5xl', '7xl']}
+                textAlign={['left', 'center']}
                 mt={8}
             >
                 Testimonials

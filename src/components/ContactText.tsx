@@ -25,7 +25,7 @@ export const ContactText: FC<ContactTextProps> = () => {
                     color="brand.100"
                     fontWeight={'bold'}
                     as="h3"
-                    fontSize={'6xl'}
+                    fontSize={['5xl', '7xl']}
                 >
                     Contact
                 </Heading>
