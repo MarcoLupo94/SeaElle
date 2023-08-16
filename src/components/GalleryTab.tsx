@@ -121,7 +121,8 @@ const CarouselSection: FC<CarouselSectionProps> = ({ data }) => {
     return (
         <Carousel
             autoPlay
-            showThumbs={false} // Hide thumbnail navigatio
+            showThumbs={false} // Hide thumbnail navigation
+            showArrows={false} // Hide next and previous arrows
             interval={3000} // Change slide every 3 seconds
             showStatus={false} // Hide slide status indicator
         >
