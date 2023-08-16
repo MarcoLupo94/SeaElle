@@ -39,7 +39,7 @@ export const NavBar: FC<NavBarProps> = () => {
             {' '}
             <Flex
                 as="nav"
-                justifyContent="space-evenly"
+                justifyContent={['space-between', 'space-evenly']}
                 alignItems="center"
                 px={4}
                 h="60px" // You can adjust the height as needed
