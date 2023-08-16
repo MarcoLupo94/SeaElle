@@ -1,4 +1,4 @@
-import { HStack, Link, Image, useBreakpointValue } from '@chakra-ui/react'
+import { HStack, Link, Image, useBreakpointValue, Text } from '@chakra-ui/react'
 import { FC } from 'react'
 
 interface SocialLinkProps {
@@ -13,16 +13,11 @@ export const SocialLink: FC<SocialLinkProps> = ({ src, href, text, color }) => {
 
     return !isMobile ? (
         <HStack _hover={{ opacity: '0.6' }}>
-            <Image maxW={['70px']} src={src} alt={text} />
-            <Link
-                style={{ textDecoration: 'none' }}
-                color={color}
-                href={href}
-                target="_blank"
-                fontWeight="extrabold"
-                fontSize={'lg'}
-            >
-                {text}
+            <Link color={color} href={href} target="_blank" fontWeight="extrabold" fontSize={'lg'}>
+                <HStack spacing={0}>
+                    <Image maxW={['70px']} src={src} alt={text} />
+                    <Text> {text}</Text>
+                </HStack>
             </Link>
         </HStack>
     ) : (
