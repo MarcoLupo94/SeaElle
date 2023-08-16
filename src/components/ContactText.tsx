@@ -4,8 +4,18 @@ import { SocialLink } from './SocialLink'
 
 interface ContactTextProps {}
 const socials = [
-    { color: '#ef0074', text: 'Instragram', href: '', src: 'insta.png' },
-    { color: '#0175B4', text: 'Linkedin', href: '', src: 'ln.png' }
+    {
+        color: '#ef0074',
+        text: 'Instragram',
+        href: 'https://www.instagram.com/chefcarolinelerus',
+        src: 'insta.png'
+    },
+    {
+        color: '#0175B4',
+        text: 'Linkedin',
+        href: 'https://www.linkedin.com/in/caroline-lerus-roulez-075107273/',
+        src: 'ln.png'
+    }
 ]
 
 export const ContactText: FC<ContactTextProps> = () => {
