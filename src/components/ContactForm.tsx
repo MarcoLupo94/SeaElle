@@ -100,7 +100,7 @@ function ContactForm() {
             bg="backgrounds.200"
             zIndex={10}
             justifyContent={'center'}
-            p={{ base: '2rem', md: '3.4rem 4rem' }} // Adjust padding
+            p={{ base: '1rem', md: '3.4rem 4rem' }} // Adjust padding
             pt={[0, 0]}
         >
             <form

@@ -17,7 +17,7 @@ export const ContactText: FC<ContactTextProps> = () => {
             mt={[0, 10]}
             alignContent={'flex-start'}
             h="80%"
-            p={isMobile ? { base: '2rem', md: '3.4rem 4rem' } : {}}
+            p={[5, 0]}
         >
             <VStack alignItems={'flex-start'} w={['100%', '65%']} gap={3}>
                 <Heading

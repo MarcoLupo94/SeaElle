@@ -16,7 +16,7 @@ export const Gallery: FC<GalleryProps> = ({ click }) => {
             boxShadow="inset 0px 2px 3px 1px rgba(0, 0, 0, 0.08)" // Custom box shadow with adjusted values
             border="solid 1px #dddddd"
             zIndex={40}
-            p={10}
+            p={[5, 10]}
             justifyContent={'space-between'}
             alignItems={['flex-start', 'center']}
         >
