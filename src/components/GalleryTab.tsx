@@ -1,9 +1,7 @@
-import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import {
     Box,
     Grid,
     GridItem,
-    IconButton,
     Image,
     Tab,
     TabList,
