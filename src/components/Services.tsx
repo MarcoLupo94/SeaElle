@@ -18,21 +18,21 @@ const services: Service[] = [
     {
         title: 'CREATIVE CONSULTING',
         content:
-            'I can help your business with all creative sweet & baked inspirations for your business, if you are a small café or start up, to 5 star hotels & restaurants.',
+            "I can assist your business by providing a range of creative confectionery and baked goods inspirations. Whether you're operating a small café or a startup, or even managing a prestigious 5-star hotel or restaurant, I can offer ideas and solutions tailored to your specific needs.",
         icon: GiWhisk,
         color: 'brand.200'
     },
     {
         title: 'RECIPE & MENU CREATION',
         content:
-            'Bespoke recipe & menu creation, testing or amending, we can create bespoke recipes and menus using tried and tested formulas, support to implementing this into your business model.',
+            "I specialize in crafting customized recipes and menus that cater to your unique preferences. Whether it's creating new recipes from scratch, refining existing ones, or conducting thorough testing, I leverage proven methodologies to ensure exceptional outcomes.",
         icon: GiChefToque,
         color: 'brand.400'
     },
     {
         title: 'INCREASE PRODUCTIVITY',
         content:
-            'When you need to increase productivity within you team, or need to create, particularly at a high quality & with quick speed.',
+            "I will help elevate your pastry team's productivity and maintain top-notch quality, even during high-volume production, by refining processes and optimizing workflows. Together, we'll achieve efficiency without compromising the excellence that sets your creations apart.",
         icon: BiCake,
         color: 'brand.100'
     }
@@ -44,11 +44,12 @@ export const Services: FC<ServicesProps> = () => {
     return (
         <VStack
             id="services"
-            height={{ base: '100%', md: '60vh' }} // Adjust the height based on the screen size
+            height={{ base: '100%', md: '100%' }} // Adjust the height based on the screen size
             maxWidth={isMobile ? '80%' : '1200px'}
             mb={isMobile ? '10%' : '0'}
             mx="auto"
             bg="white"
+            p={[0, 10]}
         >
             <Flex
                 direction={isMobile ? 'column' : 'row'} // Adjust the direction based on the screen size

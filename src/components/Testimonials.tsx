@@ -15,16 +15,16 @@ import { BiSolidQuoteAltLeft } from 'react-icons/bi'
 const testimonialsData = [
     {
         id: '213ASDDXad',
-        name: 'Alex Moreau',
+        name: 'Alex Moreau, ',
         company: 'Bisous Bisous',
         quote: 'Praesent congue justo id odio faucibus, vitae consequat velit bibendum. Suspendisse non enim tincidunt, tempor dolor nec, consequat nibh.',
         avatarUrl: '/path/to/avatars/avatar2.jpg' // Replace with the actual avatar URL
     },
     {
         id: 's401dasaxaw',
-        name: 'Jane Smith',
-        company: 'NyTimes',
-        quote: 'Praesent congue justo id odio faucibus, vitae consequat velit bibendum. Suspendisse non enim tincidunt, tempor dolor nec, consequat nibh.',
+        name: 'Consultancy customer',
+        company: '',
+        quote: "I just wanted to thank you for the vegan/dairy free patisserie order that I collected last week for my mum's birthday. Everything was absolutely delicious, and looked wonderful - particularly the lemon financiers! I really appreciate the work that was put into this order and it made a fantastic birthday present. Having been unable to enjoy things like this since chemotherapy, it was so lovely for my mum not to worry about what she was eating as we could be sure of the ingredients!",
         avatarUrl: '/path/to/avatars/avatar2.jpg' // Replace with the actual avatar URL
     }
 ]
@@ -37,10 +37,17 @@ interface CardComponentProps {
 
 const CardComponent: FC<CardComponentProps> = ({ name, company, quote }) => {
     return (
-        <HStack mb={[0, 4]} mt={[0, 4]} p={[4, 6]} bg="#F8F8F8" borderRadius={'10px'}>
+        <HStack
+            mb={[0, 4]}
+            mt={[0, 4]}
+            p={[4, 6]}
+            bg="#F8F8F8"
+            borderRadius={'10px'}
+            maxW={'500px'}
+        >
             <VStack display="flex" alignItems="flex-start" mb={2}>
                 <Icon as={BiSolidQuoteAltLeft} fontSize={25} mr={2} color="brand.200" />
-                <Text w="90%" color="black" fontSize={['lg,', 'xl']} fontStyle="italic">
+                <Text w="90%" color="black" fontSize={['lg,', 'lg']} fontStyle="italic">
                     {quote}
                 </Text>
                 <Text
@@ -49,7 +56,7 @@ const CardComponent: FC<CardComponentProps> = ({ name, company, quote }) => {
                     fontWeight="italic"
                     fontStyle="italic"
                 >
-                    - {name}, {company}
+                    - {name} {company}
                 </Text>
             </VStack>
         </HStack>

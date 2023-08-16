@@ -49,16 +49,16 @@ const App = () => {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        zIndex: '80'
+                        zIndex: '2000'
                     }}
                 >
                     <Button
                         onClick={handleCloseZoom}
                         colorScheme="red"
                         position="absolute"
-                        top="20px"
-                        right="20px"
-                        zIndex={1001}
+                        top="40px"
+                        right="40px"
+                        zIndex={4000}
                     >
                         <FaTimes />
                     </Button>

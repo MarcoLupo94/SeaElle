@@ -82,39 +82,37 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
         {
             label: 'Cakes',
             content: [
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600281/BB_39-min_qnbvf6.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600273/BB_38-min_k1rwnn.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600267/BB_18-min_gyxoo3.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600284/BB_42-min_vmcyar.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600282/BB_33-min_nqhsxt.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600285/BB_Large_Range-min_duboig.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600273/BB_16-min_g7cfto.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692209931/WhatsApp_Image_2023-08-16_at_19.18.21_1_ygyse2.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600285/BB_32-min_kkhsbj.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692210287/WhatsApp_Image_2023-08-16_at_19.24.28_c4agln.jpg',
                 'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600268/BB_11-min_zzfvpd.jpg'
             ]
         },
         {
             label: 'Chocolate',
             content: [
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600273/BB_38-min_k1rwnn.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600281/BB_39-min_qnbvf6.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600284/BB_42-min_vmcyar.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600267/BB_18-min_gyxoo3.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600268/BB_11-min_zzfvpd.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600282/BB_33-min_nqhsxt.jpg'
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692205957/WhatsApp_Image_2023-08-16_at_18.06.34_1_tmrcn8.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692205957/WhatsApp_Image_2023-08-16_at_18.06.33_vypjuo.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692205956/WhatsApp_Image_2023-08-16_at_18.06.32_naid7k.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692209436/WhatsApp_Image_2023-08-16_at_18.53.07_1_lcxuav.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692205955/WhatsApp_Image_2023-08-13_at_13.21.54_tsjfwc.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692206340/WhatsApp_Image_2023-08-16_at_18.06.34_2_vrklpy.jpg'
             ]
         },
         {
-            label: 'Viennoiserie',
+            label: 'Vegan & Gluten Free',
             content: [
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600273/BB_38-min_k1rwnn.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600281/BB_39-min_qnbvf6.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600282/BB_33-min_nqhsxt.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600267/BB_18-min_gyxoo3.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600284/BB_42-min_vmcyar.jpg',
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1691600268/BB_11-min_zzfvpd.jpg'
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207111/WhatsApp_Image_2023-08-16_at_18.31.23_1_tkekfk.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207728/WhatsApp_Image_2023-08-16_at_18.41.20_1_itnxuf.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207042/WhatsApp_Image_2023-08-16_at_18.27.29_emu2dm.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207730/WhatsApp_Image_2023-08-16_at_18.41.39_1_arbale.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692208056/WhatsApp_Image_2023-08-16_at_18.46.23_1_jszkcm.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207817/WhatsApp_Image_2023-08-16_at_18.42.38_1_abct3k.jpg'
             ]
         }
     ]
-
-    // 3. Pass the props and chill!
 
     return isMobile ? <CarouselSection data={tabData} /> : <DataTabs data={tabData} />
 }

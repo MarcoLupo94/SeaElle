@@ -39,7 +39,7 @@ export const NavBar: FC<NavBarProps> = () => {
             {' '}
             <Flex
                 as="nav"
-                justifyContent="space-between"
+                justifyContent="space-evenly"
                 alignItems="center"
                 px={4}
                 h="60px" // You can adjust the height as needed
@@ -65,21 +65,45 @@ export const NavBar: FC<NavBarProps> = () => {
                     display={{ base: 'none', md: 'flex' }} // Hide on mobile, show on medium and larger screens
                     align="center"
                 >
-                    <NavLink path="services" text="Services" />
-                    <NavLink path="about" text="About Me" />
-                    <NavLink path="portfolio" text="Portfolio" />
-                    <NavLink path="testimonials" text="Testimonials" />
-                    <NavLink path="contact-me" text="Contact Me" />
+                    <NavLink
+                        path="services"
+                        text="Services"
+                        color={isScrolled || isMobile ? 'white' : 'black'}
+                    />
+                    <NavLink
+                        path="about"
+                        text="About Me"
+                        color={isScrolled || isMobile ? 'white' : 'black'}
+                    />
+                    <NavLink
+                        path="portfolio"
+                        text="Portfolio"
+                        color={isScrolled || isMobile ? 'white' : 'black'}
+                    />
+                    <NavLink
+                        path="testimonials"
+                        text="Testimonials"
+                        color={isScrolled || isMobile ? 'white' : 'black'}
+                    />
+                    <NavLink
+                        path="contact-me"
+                        text="Contact Me"
+                        color={isScrolled || isMobile ? 'white' : 'black'}
+                    />
                 </Flex>
                 {/* Socials Links */}
-                <Flex
+                {/* <Flex
                     display={{ base: 'none', md: 'flex' }} // Hide on mobile, show on medium and larger screens
                     align="center"
-                >
-                    <NavLink path="services" text="Baking School" />
-                    {/* <NavLink path="about" text="Instagram" /> */}
-                    {/* <NavLink path="portfolio" text="Linkedin" /> */}
-                </Flex>
+                > */}
+                {/* <NavLink
+                        path="services"
+                        text="Baking School"
+                        color={isScrolled || isMobile ? 'white' : 'black'}
+                    /> */}
+                {/* <NavLink path="about" text="Instagram" /> */}
+                {/* <NavLink path="portfolio" text="Linkedin" /> */}
+                {/* </Flex> */}
                 {isMobile && (
                     <Hamburger
                         toggled={isOpen}

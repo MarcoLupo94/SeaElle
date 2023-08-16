@@ -91,7 +91,7 @@ function ContactForm() {
         <Flex
             as="section"
             w="100%"
-            h={isMobile ? 'auto' : '60vh'}
+            h={isMobile ? 'auto' : '100%'}
             boxShadow="0px 2px 3px 0px rgba(0, 0, 0, 0.04)"
             borderTop="none"
             borderLeft="solid 1px #dddddd"

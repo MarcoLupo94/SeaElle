@@ -38,14 +38,20 @@ function AboutMeSection() {
                 </Text>
                 <Text textAlign="left" fontSize={['md', 'lg']} w="100%" color={'#757575'}>
                     I am an Executive Head Pastry Chef with over 10 years of experience in the
-                    industry. From american style bakeries to 5 star hotels, as well as french
-                    restaurants and bread making bakery; I thrive on widening my knowledge, learning
-                    from great, talented pastry chefs and teaching anyone wiling to learn. I am
-                    deeply passionate about all styles of baking but I specialize in dairy free,
-                    gluten free and vegan patisseries. After realizing the gap in dairy free baking
-                    content, I decided to start sharing my knowledge and expertise to allow everyone
-                    to explore and enjoy different ways of baking and learn how to successfully make
-                    amazing cakes and desserts without any dairy (and other allergens).
+                    industry, spanning American-style bakeries, 5-star hotels, French restaurants,
+                    and bread-making bakeries. I thrive on expanding my knowledge, collaborating
+                    with talented pastry chefs, and imparting knowledge to those eager to learn. My
+                    profound passion encompasses diverse baking styles, with specializations in
+                    French Pâtisserie, Dairy-free, Gluten-free, and Vegan recipe creation.
+                    <br />
+                    <br />
+                    Having accumulated a wealth of expertise over the years, I have now transitioned
+                    into the role of a dedicated pastry consultant. Drawing from my extensive
+                    background and hands-on experience, I am committed to sharing valuable insights
+                    and strategies with businesses and individuals alike, aiming to elevate their
+                    pastry operations. Whether it's refining production processes, innovating menu
+                    offerings, or ensuring high-quality standards, I am here to guide and empower
+                    pastry establishments towards greater success.
                 </Text>
             </Box>
         </Flex>
