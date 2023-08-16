@@ -67,7 +67,7 @@ function TestimonialsSection() {
     const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
 
     return (
-        <Box w={['80%', '65%']}>
+        <Box w={['100%', '65%']} p={[4, 0]}>
             <Heading
                 fontFamily={'Dancing Script'}
                 color="brand.100"

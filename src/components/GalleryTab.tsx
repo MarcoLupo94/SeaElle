@@ -126,39 +126,6 @@ const CarouselSection: FC<CarouselSectionProps> = ({ data }) => {
             showThumbs={false} // Hide thumbnail navigatio
             interval={3000} // Change slide every 3 seconds
             showStatus={false} // Hide slide status indicator
-            renderArrowNext={clickHandler => (
-                <IconButton
-                    icon={<ArrowRightIcon />}
-                    size="md"
-                    variant="ghost"
-                    onClick={clickHandler}
-                    colorScheme="brand"
-                    borderRadius="full"
-                    _focus={{ outline: 'none' }}
-                    position="absolute"
-                    top="50%"
-                    right="1rem"
-                    transform="translateY(-50%)"
-                    aria-label={''}
-                />
-            )}
-            renderArrowPrev={clickHandler => (
-                <IconButton
-                    icon={<ArrowLeftIcon />}
-                    variant="ghost"
-                    size="md"
-                    onClick={clickHandler}
-                    colorScheme="brand"
-                    borderRadius="full"
-                    _focus={{ outline: 'none' }}
-                    position="absolute"
-                    top="50%"
-                    left="1rem"
-                    transform="translateY(-50%)"
-                    zIndex={300}
-                    aria-label={''}
-                />
-            )}
         >
             {data
                 .reduce((acc: string[], curr) => {

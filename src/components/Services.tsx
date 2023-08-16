@@ -45,7 +45,7 @@ export const Services: FC<ServicesProps> = () => {
         <VStack
             id="services"
             height={{ base: '100%', md: '100%' }} // Adjust the height based on the screen size
-            maxWidth={isMobile ? '80%' : '1200px'}
+            maxWidth={isMobile ? '100%' : '1200px'}
             mb={isMobile ? '10%' : '0'}
             mx="auto"
             bg="white"
