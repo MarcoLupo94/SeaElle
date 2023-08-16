@@ -17,7 +17,7 @@ const testimonialsData = [
         id: '213ASDDXad',
         name: 'Alex Moreau, ',
         company: 'Bisous Bisous',
-        quote: 'Praesent congue justo id odio faucibus, vitae consequat velit bibendum. Suspendisse non enim tincidunt, tempor dolor nec, consequat nibh.',
+        quote: 'I am absolutely delighted with the pastry consultancy services provided by Caroline over the past 3 years. Her expertise and personalized guidance have been instrumental in taking the standards of my patisserie shops to the next level. I highly recommend her services to anyone looking to refine and upgrade their dessert offerings.',
         avatarUrl: '/path/to/avatars/avatar2.jpg' // Replace with the actual avatar URL
     },
     {
