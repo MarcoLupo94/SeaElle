@@ -44,16 +44,23 @@ export const NavBar: FC<NavBarProps> = () => {
                 px={4}
                 h="60px" // You can adjust the height as needed
                 bg={isScrolled || isMobile ? 'brand.100' : 'transparent'} // Change background color when scrolled
-                color={isScrolled || isMobile ? 'white' : 'black'} // Change text color when scrolled
+                color="white"
                 boxShadow={isScrolled ? 'md' : 'none'} // Add shadow effect when scrolled
                 position={['absolute', 'fixed']}
                 top={0}
                 left={0}
                 right={0}
                 zIndex={400}
-                style={{
-                    transition: 'background-color 0.3s, color 0.3s, box-shadow 0.3s' // Add smooth transitions
-                }}
+                style={
+                    isScrolled || isMobile
+                        ? {
+                              transition: 'background-color 0.3s, color 0.3s, box-shadow 0.3s' // Add smooth transitions
+                          }
+                        : {
+                              transition: 'background-color 0.3s, color 0.3s, box-shadow 0.3s', // Add smooth transitions
+                              background: 'linear-gradient(transparent,rgba(0, 0, 0, 0.05 )'
+                          }
+                }
             >
                 {/* Custom Logo */}
                 <Text style={{ fontSize: '2rem' }} fontWeight="bold" fontFamily="Dancing Script">
@@ -65,31 +72,11 @@ export const NavBar: FC<NavBarProps> = () => {
                     display={isMobile ? 'none' : 'flex'} // Hide on mobile, show on medium and larger screens
                     align="center"
                 >
-                    <NavLink
-                        path="services"
-                        text="Services"
-                        color={isScrolled || isMobile ? 'white' : 'black'}
-                    />
-                    <NavLink
-                        path="about"
-                        text="About Me"
-                        color={isScrolled || isMobile ? 'white' : 'black'}
-                    />
-                    <NavLink
-                        path="portfolio"
-                        text="Portfolio"
-                        color={isScrolled || isMobile ? 'white' : 'black'}
-                    />
-                    <NavLink
-                        path="testimonials"
-                        text="Testimonials"
-                        color={isScrolled || isMobile ? 'white' : 'black'}
-                    />
-                    <NavLink
-                        path="contact-me"
-                        text="Contact Me"
-                        color={isScrolled || isMobile ? 'white' : 'black'}
-                    />
+                    <NavLink path="services" text="Services" color="white" />
+                    <NavLink path="about" text="About Me" color="white" />
+                    <NavLink path="portfolio" text="Portfolio" color="white" />
+                    <NavLink path="testimonials" text="Testimonials" color="white" />
+                    <NavLink path="contact-me" text="Contact Me" color="white" />
                 </Flex>
                 {/* Socials Links */}
                 {/* <Flex
