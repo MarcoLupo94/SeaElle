@@ -1,6 +1,6 @@
 import { EmailIcon } from '@chakra-ui/icons'
 import { Button, HStack, Heading, Text, VStack, useBreakpointValue } from '@chakra-ui/react'
-import { FC, lazy, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 interface IntoBannerProps {}
 

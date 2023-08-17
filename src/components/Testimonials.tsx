@@ -1,13 +1,4 @@
-import {
-    Box,
-    Flex,
-    HStack,
-    Heading,
-    Icon,
-    Text,
-    VStack,
-    useBreakpointValue
-} from '@chakra-ui/react'
+import { Box, Flex, HStack, Heading, Icon, Text, VStack } from '@chakra-ui/react'
 import { FC } from 'react'
 import { BiSolidQuoteAltLeft } from 'react-icons/bi'
 
