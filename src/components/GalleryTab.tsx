@@ -51,6 +51,7 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
                                 {tab.content.map((url, index) => (
                                     <GridItem key={(index + 1) * 321} onClick={() => click(url)}>
                                         <Image
+                                            loading="lazy"
                                             _hover={{
                                                 cursor: 'pointer',
                                                 filter: 'brightness(85%)',
@@ -102,7 +103,7 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
         {
             label: 'Vegan & Gluten Free',
             content: [
-                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207111/WhatsApp_Image_2023-08-16_at_18.31.23_1_tkekfk.jpg',
+                'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692260496/WhatsApp_Image_2023-08-16_at_18.45.01_1_y8uypy.jpg',
                 'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207728/WhatsApp_Image_2023-08-16_at_18.41.20_1_itnxuf.jpg',
                 'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207042/WhatsApp_Image_2023-08-16_at_18.27.29_emu2dm.jpg',
                 'https://res.cloudinary.com/dytcr3b3j/image/upload/v1692207730/WhatsApp_Image_2023-08-16_at_18.41.39_1_arbale.jpg',

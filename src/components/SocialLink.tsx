@@ -15,7 +15,7 @@ export const SocialLink: FC<SocialLinkProps> = ({ src, href, text, color }) => {
         <HStack _hover={{ opacity: '0.6' }}>
             <Link color={color} href={href} target="_blank" fontWeight="extrabold" fontSize={'lg'}>
                 <HStack spacing={0}>
-                    <Image maxW={['70px']} src={src} alt={text} />
+                    <Image loading="lazy" maxW={['70px']} src={src} alt={text} />
                     <Text> {text}</Text>
                 </HStack>
             </Link>
@@ -30,7 +30,7 @@ export const SocialLink: FC<SocialLinkProps> = ({ src, href, text, color }) => {
                 fontWeight="extrabold"
                 fontSize={'lg'}
             >
-                <Image maxW={['80px']} src={src} alt={text} />
+                <Image loading="lazy" maxW={['80px']} src={src} alt={text} />
             </Link>
         </HStack>
     )

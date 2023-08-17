@@ -13,6 +13,7 @@ function AboutMeSection() {
         >
             <Box boxShadow={'2xl'}>
                 <Image
+                    loading="lazy"
                     objectFit="cover"
                     maxWidth="100%"
                     height="600px"

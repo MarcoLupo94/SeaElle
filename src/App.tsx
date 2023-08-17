@@ -63,6 +63,7 @@ const App = () => {
                         <FaTimes />
                     </Button>
                     <Image
+                        loading="lazy"
                         src={clickedImage}
                         style={{
                             maxWidth: '80%',
