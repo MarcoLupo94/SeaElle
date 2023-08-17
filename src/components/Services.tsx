@@ -1,8 +1,7 @@
 import { Flex, HStack, VStack, useBreakpointValue } from '@chakra-ui/react'
 import { FC } from 'react'
 import { IconType } from 'react-icons'
-import { BiCake } from 'react-icons/bi'
-import { GiChefToque, GiWhisk } from 'react-icons/gi'
+import { GiChefToque, GiCakeSlice, GiWhisk } from 'react-icons/gi'
 import { NavLink } from './NavLink'
 import { ServiceCard } from './ServiceCard'
 
@@ -19,21 +18,21 @@ const services: Service[] = [
         title: 'CREATIVE CONSULTING',
         content:
             "I can assist your business by providing a range of creative confectionery and baked goods inspirations. Whether you're operating a small café or a startup, or even managing a prestigious 5-star hotel or restaurant, I can offer ideas and solutions tailored to your specific needs.",
-        icon: GiWhisk,
+        icon: GiCakeSlice,
         color: 'brand.200'
     },
     {
         title: 'RECIPE & MENU CREATION',
         content:
             "I specialize in crafting customized recipes and menus that cater to your unique preferences. Whether it's creating new recipes from scratch, refining existing ones, or conducting thorough testing, I leverage proven methodologies to ensure exceptional outcomes.",
-        icon: GiChefToque,
+        icon: GiWhisk,
         color: 'brand.400'
     },
     {
-        title: 'INCREASE PRODUCTIVITY',
+        title: 'PRODUCTIVITY OPTIMISATION',
         content:
             "I will help elevate your pastry team's productivity and maintain top-notch quality, even during high-volume production, by refining processes and optimizing workflows. Together, we'll achieve efficiency without compromising the excellence that sets your creations apart.",
-        icon: BiCake,
+        icon: GiChefToque,
         color: 'brand.100'
     }
 ]
