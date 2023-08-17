@@ -5,17 +5,16 @@ import {
     Divider,
     Flex,
     Text,
+    useBreakpointValue,
     useDisclosure
 } from '@chakra-ui/react'
-import { FC, useEffect, useState } from 'react'
-import mobile from 'is-mobile'
 import Hamburger from 'hamburger-react'
+import { FC, useEffect, useState } from 'react'
 interface NavBarProps {}
 
 export const NavBar: FC<NavBarProps> = () => {
     const [isScrolled, setScrolled] = useState(false)
-    const [isMobile] = useState(mobile({ tablet: true }))
-
+    const isMobile = useBreakpointValue({ base: true, sm: true, lg: false, md: true })
     const { isOpen, onToggle } = useDisclosure()
 
     const handleToggleMenu = () => {
