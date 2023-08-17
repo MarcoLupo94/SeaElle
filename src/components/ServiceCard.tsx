@@ -19,8 +19,8 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard: FC<ServiceCardProps> = ({ title, content, icon, color }) => {
-    const cardWidth = useBreakpointValue({ base: '100%', sm: '250px', md: '80%', lg: '400px' }) // Define width based on screen size
-    const cardHeight = useBreakpointValue({ base: 'auto', sm: '300px', md: '350px', lg: '400px' }) // Define height based on screen size
+    const cardWidth = useBreakpointValue({ base: '100%', sm: '250px', md: '80%', lg: '30%' }) // Define width based on screen size
+    const cardHeight = useBreakpointValue({ base: 'auto', sm: '300px', md: '350px', lg: '100%' }) // Define height based on screen size
 
     return (
         <Card

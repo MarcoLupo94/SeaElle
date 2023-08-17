@@ -19,8 +19,7 @@ const socials = [
 ]
 
 export const ContactText: FC<ContactTextProps> = () => {
-    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
-
+    const isMobile = useBreakpointValue({ base: true, sm: true, lg: false, md: true })
     return (
         <VStack
             w={isMobile ? '100%' : '100%'}

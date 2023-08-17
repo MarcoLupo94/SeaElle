@@ -38,14 +38,13 @@ const services: Service[] = [
 ]
 
 export const Services: FC<ServicesProps> = () => {
-    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
-
+    const isMobile = useBreakpointValue({ base: true, sm: true, lg: false, md: true })
     return (
         <VStack
             id="services"
             w="100%"
             height={{ base: '100%', md: '100%' }} // Adjust the height based on the screen size
-            maxWidth={isMobile ? '100%' : '1200px'}
+            maxWidth={isMobile ? '100%' : '100%'}
             mb={['10%', '10%', '10%', '0']}
             mx="auto"
             bg="white"
@@ -67,7 +66,7 @@ export const Services: FC<ServicesProps> = () => {
                     />
                 ))}
             </Flex>
-            <HStack justifyContent="center" width="100%" mt={[8, 8, 8, 0]}>
+            <HStack justifyContent="center" width="100%" mt={[8, 8, 8, 8]}>
                 <NavLink
                     path="contact-me"
                     text="Get in touch"
