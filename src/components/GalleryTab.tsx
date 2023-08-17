@@ -63,7 +63,7 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
                                             height="100%"
                                             borderRadius={'5px'}
                                             src={url}
-                                            alt={`Image ${index + 1} - ${data[index].label}`}
+                                            alt={`Image ${index + 1}`}
                                         />
                                     </GridItem>
                                 ))}
@@ -141,7 +141,7 @@ const CarouselSection: FC<CarouselSectionProps> = ({ data }) => {
                             height="100%"
                             borderRadius={'5px'}
                             src={url}
-                            alt={`Image ${index + 1} - ${data[index].label}`}
+                            alt={`Image ${index + 1}`}
                         />
                     </Box>
                 ))}
