@@ -14,7 +14,7 @@ interface NavBarProps {}
 
 export const NavBar: FC<NavBarProps> = () => {
     const [isScrolled, setScrolled] = useState(false)
-    const [isMobile] = useState(mobile())
+    const [isMobile] = useState(mobile({ tablet: true }))
 
     const { isOpen, onToggle } = useDisclosure()
 
@@ -39,7 +39,7 @@ export const NavBar: FC<NavBarProps> = () => {
             {' '}
             <Flex
                 as="nav"
-                justifyContent={['space-between', 'space-evenly']}
+                justifyContent={['space-between', 'space-between', 'space-between', 'space-evenly']}
                 alignItems="center"
                 px={4}
                 h="60px" // You can adjust the height as needed
@@ -62,7 +62,7 @@ export const NavBar: FC<NavBarProps> = () => {
 
                 {/* Navigation Links */}
                 <Flex
-                    display={{ base: 'none', md: 'flex' }} // Hide on mobile, show on medium and larger screens
+                    display={isMobile ? 'none' : 'flex'} // Hide on mobile, show on medium and larger screens
                     align="center"
                 >
                     <NavLink

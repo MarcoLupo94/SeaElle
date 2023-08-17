@@ -25,7 +25,7 @@ const App = () => {
         document.body.style.overflow = 'auto' // Restore scrolling
     }
     return (
-        <VStack overflowX={'hidden'}>
+        <VStack overflowX={'hidden'} h="100%">
             <NavBar />
             <IntoBanner />
             <Services />

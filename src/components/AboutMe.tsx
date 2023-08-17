@@ -23,7 +23,7 @@ function AboutMeSection() {
                     border="2px solid #946070"
                 />
             </Box>
-            <Box w={['100%', '40%']} height="600px" h="100%">
+            <Box w={['100%', '100%', '100%', '40%']} height="600px" h="100%">
                 <Heading
                     fontFamily={'Dancing Script'}
                     color="brand.100"

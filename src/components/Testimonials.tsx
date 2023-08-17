@@ -44,6 +44,7 @@ const CardComponent: FC<CardComponentProps> = ({ name, company, quote }) => {
             bg="#F8F8F8"
             borderRadius={'10px'}
             maxW={'500px'}
+            minH={[0, 0, 0, '400px']}
         >
             <VStack display="flex" alignItems="flex-start" mb={2}>
                 <Icon as={BiSolidQuoteAltLeft} fontSize={25} mr={2} color="brand.200" />
@@ -64,10 +65,8 @@ const CardComponent: FC<CardComponentProps> = ({ name, company, quote }) => {
 }
 
 function TestimonialsSection() {
-    const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
-
     return (
-        <Box w={['100%', '65%']} p={[4, 0]}>
+        <Box w={['100%', '100%', '100%', '65%']} p={[4, 0]}>
             <Heading
                 fontFamily={'Dancing Script'}
                 color="brand.100"
@@ -80,7 +79,12 @@ function TestimonialsSection() {
                 Testimonials
             </Heading>
             <Box id="testimonials" py={12}>
-                <Flex direction={isMobile ? 'column' : 'row'} gap={10} alignContent={'center'}>
+                <Flex
+                    direction={['column', 'column', 'column', 'row']}
+                    alignItems={'center'}
+                    gap={10}
+                    alignContent={'center'}
+                >
                     {testimonialsData.map(testimonial => (
                         <CardComponent
                             key={testimonial.id}

@@ -29,7 +29,7 @@ export const ContactText: FC<ContactTextProps> = () => {
             h="80%"
             p={[5, 0]}
         >
-            <VStack alignItems={'flex-start'} w={['100%', '65%']} gap={3}>
+            <VStack alignItems={'flex-start'} w={['100%', '100%', '85%', '65%']} gap={3}>
                 <Heading
                     fontFamily={'Dancing Script'}
                     color="brand.100"

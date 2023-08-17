@@ -44,17 +44,19 @@ export const Services: FC<ServicesProps> = () => {
     return (
         <VStack
             id="services"
+            w="100%"
             height={{ base: '100%', md: '100%' }} // Adjust the height based on the screen size
             maxWidth={isMobile ? '100%' : '1200px'}
-            mb={isMobile ? '10%' : '0'}
+            mb={['10%', '10%', '10%', '0']}
             mx="auto"
             bg="white"
-            p={[0, 10]}
+            p={[0, 0, 0, 10]}
         >
             <Flex
-                direction={isMobile ? 'column' : 'row'} // Adjust the direction based on the screen size
-                gap={isMobile ? '6' : '10'} // Adjust the gap between cards based on the screen size
+                direction={['column', 'column', 'column', 'row']} // Adjust the direction based on the screen size
+                gap={['6', '6', '0', '10']} // Adjust the gap between cards based on the screen size
                 justifyContent={isMobile ? 'center' : 'space-evenly'}
+                alignItems="center"
             >
                 {services.map((service, i) => (
                     <ServiceCard
@@ -66,7 +68,7 @@ export const Services: FC<ServicesProps> = () => {
                     />
                 ))}
             </Flex>
-            <HStack justifyContent="center" width="100%" mt={isMobile ? 8 : 0}>
+            <HStack justifyContent="center" width="100%" mt={[8, 8, 8, 0]}>
                 <NavLink
                     path="contact-me"
                     text="Get in touch"

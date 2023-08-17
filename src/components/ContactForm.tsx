@@ -85,7 +85,7 @@ function ContactForm() {
         })
     }
 
-    const isMobile = useBreakpointValue({ base: true, md: false })
+    const isMobile = useBreakpointValue({ base: true, sm: true, md: true, lg: false })
 
     return (
         <Flex
@@ -200,7 +200,7 @@ function ContactForm() {
                                 bg="brand.100"
                                 size="lg"
                                 color="white"
-                                w={['100%', 'auto']}
+                                w={['100%', '100%', '100%', 'auto']}
                             >
                                 Send Email
                             </Button>
