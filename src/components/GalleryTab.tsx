@@ -11,7 +11,7 @@ import {
     Tabs,
     useBreakpointValue
 } from '@chakra-ui/react'
-import { FC, useState } from 'react'
+import { FC, SetStateAction, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
@@ -26,7 +26,7 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
     const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
     const [tabIndex, setTabIndex] = useState(0)
 
-    const handleTabsChange = index => {
+    const handleTabsChange = (index: SetStateAction<number>) => {
         setTabIndex(index)
     }
     // 1. Create the component
