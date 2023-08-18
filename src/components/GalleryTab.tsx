@@ -4,13 +4,14 @@ import {
     GridItem,
     Image,
     Tab,
+    TabIndicator,
     TabList,
     TabPanel,
     TabPanels,
     Tabs,
     useBreakpointValue
 } from '@chakra-ui/react'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
@@ -23,14 +24,18 @@ interface TabData {
 }
 const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
     const isMobile = useBreakpointValue({ base: true, md: false }) // Define breakpoints for mobile view
+    const [tabIndex, setTabIndex] = useState(0)
 
+    const handleTabsChange = index => {
+        setTabIndex(index)
+    }
     // 1. Create the component
     interface DataTabsProps {
         data: TabData[]
     }
     const DataTabs: FC<DataTabsProps> = ({ data }) => {
         return (
-            <Tabs w="70%">
+            <Tabs w="70%" index={tabIndex} onChange={handleTabsChange}>
                 <TabList justifyContent={'center'}>
                     {data.map((tab, index) => (
                         <Tab
@@ -44,13 +49,15 @@ const GalleryTab: FC<GalleryTabProps> = ({ click }) => {
                         </Tab>
                     ))}
                 </TabList>
+                <TabIndicator mt="-1.5px" height="2px" bg="brand.100" borderRadius="1px" />
                 <TabPanels>
                     {data.map((tab, index) => (
                         <TabPanel key={(index + 1) * 92} position="relative">
                             <Grid templateColumns="repeat(3, 1fr)" gap={4}>
                                 {tab.content.map((url, index) => (
-                                    <GridItem key={(index + 1) * 321} onClick={() => click(url)}>
+                                    <GridItem key={(index + 1) * 321}>
                                         <Image
+                                            onClick={() => click(url)}
                                             loading="lazy"
                                             _hover={{
                                                 cursor: 'pointer',
