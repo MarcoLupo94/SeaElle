@@ -156,6 +156,8 @@ export const NavLink: FC<NavLinkProps> = ({ path, text, onClick, lower, ...props
     return (
         <Box mx={3} onClick={handleClick} cursor="pointer">
             <ChakraLink
+                href={`#${path}`}
+                onClick={e => e.preventDefault()}
                 fontSize="sm"
                 fontWeight="semibold" // Use "semibold" for a bolder font weight
                 textTransform={lower ? 'none' : 'uppercase'} // Convert text to uppercase
