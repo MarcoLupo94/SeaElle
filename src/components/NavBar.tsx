@@ -45,7 +45,7 @@ export const NavBar: FC<NavBarProps> = () => {
                 bg={isScrolled || isMobile ? 'brand.100' : 'transparent'} // Change background color when scrolled
                 color="white"
                 boxShadow={isScrolled ? 'md' : 'none'} // Add shadow effect when scrolled
-                position={['absolute', 'fixed']}
+                position={['absolute', 'absolute', 'absolute', 'fixed']}
                 top={0}
                 left={0}
                 right={0}
@@ -72,24 +72,11 @@ export const NavBar: FC<NavBarProps> = () => {
                     align="center"
                 >
                     <NavLink path="services" text="Services" color="white" />
-                    <NavLink path="about" text="About Me" color="white" />
+                    <NavLink path="about" text="About" color="white" />
                     <NavLink path="portfolio" text="Portfolio" color="white" />
                     <NavLink path="testimonials" text="Testimonials" color="white" />
-                    <NavLink path="contact-me" text="Contact Me" color="white" />
+                    <NavLink path="contact-me" text="Contact" color="white" />
                 </Flex>
-                {/* Socials Links */}
-                {/* <Flex
-                    display={{ base: 'none', md: 'flex' }} // Hide on mobile, show on medium and larger screens
-                    align="center"
-                > */}
-                {/* <NavLink
-                        path="services"
-                        text="Baking School"
-                        color={isScrolled || isMobile ? 'white' : 'black'}
-                    /> */}
-                {/* <NavLink path="about" text="Instagram" /> */}
-                {/* <NavLink path="portfolio" text="Linkedin" /> */}
-                {/* </Flex> */}
                 {isMobile && (
                     <Hamburger
                         toggled={isOpen}
@@ -106,7 +93,7 @@ export const NavBar: FC<NavBarProps> = () => {
                 left={0}
                 top={10}
                 w="100%"
-                h="50vh"
+                h={['50vh', '50vh', '30vh', '100vh']}
                 bg="brand.100"
                 boxShadow="0px 2px 3px 0px rgba(0, 0, 0, 0.04)"
                 zIndex={100}

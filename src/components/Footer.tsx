@@ -28,6 +28,7 @@ function Footer() {
                             <NavLink text="home" path={'home'} />
                             <NavLink text="about" path={'about'} />
                             <NavLink text="services" path={'services'} />
+                            <NavLink text="contact" path={'contact-me'} />
 
                             {/* Add more links as needed */}
                         </Flex>
