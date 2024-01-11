@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Text, useBreakpointValue } from '@chakra-ui/react'
+import { Box, Center, Flex, useBreakpointValue } from '@chakra-ui/react'
 import { NavLink } from './NavBar'
 
 function Footer() {
@@ -18,11 +18,15 @@ function Footer() {
                 </Center>
             ) : (
                 <Flex h="40px" justifyContent="center" alignItems="center" flexWrap="wrap">
-                    <Box flex="1">
-                        <Text textAlign="center" fontSize="sm">
-                            © 2023 SeaElle
-                        </Text>
-                    </Box>
+                    <Center flex="1">
+                        <a
+                            href="https://www.lupowebdesign.com"
+                            color="fonts.100"
+                            style={{ textDecoration: 'none' }}
+                        >
+                            © Website by Lupo Web Design
+                        </a>
+                    </Center>
                     <Box flex="1">
                         <Flex justifyContent="center" alignItems="center">
                             <NavLink text="home" path={'home'} />
